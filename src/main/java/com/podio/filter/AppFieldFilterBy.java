@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.podio.common.CSVUtil;
 
-public class AppFieldFilterBy extends FieldFilterBy<List<Integer>> {
+public class AppFieldFilterBy extends FieldFilterBy<List<Long>> {
 
 	public AppFieldFilterBy(long fieldId) {
 		super(fieldId);
 	}
 
 	@Override
-	public final String format(List<Integer> values) {
+	public final String format(List<Long> values) {
 		return CSVUtil.toCSV(values);
 	}
 }

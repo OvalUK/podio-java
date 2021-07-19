@@ -11,7 +11,7 @@ public class DateFieldFilterBy extends BaseDateFilterBy {
 
 	@Override
 	public final String getKey() {
-		return Integer.toString(fieldId);
+		return Long.toString(fieldId);
 	}
 
 }

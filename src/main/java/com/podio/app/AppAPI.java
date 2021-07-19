@@ -203,7 +203,7 @@ public class AppAPI extends BaseAPI {
 	 * @param appIds
 	 *            The ids of the apps in the new order
 	 */
-	public void updateOrder(long spaceId, List<Integer> appIds) {
+	public void updateOrder(long spaceId, List<Long> appIds) {
 		getResourceFactory().getApiResource("/app/space/" + spaceId + "/order")
 				.entity(appIds, MediaType.APPLICATION_JSON_TYPE).put();
 	}
@@ -223,7 +223,7 @@ public class AppAPI extends BaseAPI {
 	 * Returns the apps that the given app depends on.
 	 * 
 	 * @param appId
-	 *            The id of the app the dependecies should be returned for
+	 *            The id of the app the dependencies should be returned for
 	 * @return The applications that the given app depends on
 	 */
 	public Dependencies getDependencies(long appId) {

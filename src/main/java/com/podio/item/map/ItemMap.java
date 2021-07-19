@@ -37,7 +37,7 @@ public class ItemMap<T> {
 
 	public ItemCreate getCreate(T model) {
 		return new ItemCreate(getExternalId(model), getUpdates(model),
-				Collections.<Integer> emptyList(),
+				Collections.<Long> emptyList(),
 				Collections.<String> emptyList());
 	}
 

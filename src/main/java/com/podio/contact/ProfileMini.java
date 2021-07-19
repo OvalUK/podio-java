@@ -5,7 +5,7 @@ public class ProfileMini extends ProfileBase {
 
 	private static final long serialVersionUID = 1L;
 
-	private Integer avatar;
+	private Long avatar;
 
 	private String name;
 
@@ -15,11 +15,11 @@ public class ProfileMini extends ProfileBase {
 				+ avatar + ", name=" + name + "]";
 	}
 
-	public Integer getAvatar() {
+	public Long getAvatar() {
 		return avatar;
 	}
 
-	public void setAvatar(Integer avatar) {
+	public void setAvatar(Long avatar) {
 		this.avatar = avatar;
 	}
 

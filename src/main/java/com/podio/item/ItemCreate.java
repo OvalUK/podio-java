@@ -10,7 +10,7 @@ public class ItemCreate extends ItemUpdate {
 	 * Temporary files that have been uploaded and should be attached to this
 	 * item
 	 */
-	private List<Integer> fileIds;
+	private List<Long> fileIds;
 
 	/**
 	 * The tags to put on the item
@@ -22,19 +22,19 @@ public class ItemCreate extends ItemUpdate {
 	}
 
 	public ItemCreate(String externalId, List<FieldValuesUpdate> fields,
-			List<Integer> fileIds, List<String> tags) {
+			List<Long> fileIds, List<String> tags) {
 		super(externalId, fields);
 		this.fileIds = fileIds;
 		this.tags = tags;
 	}
 
 	@JsonProperty("file_ids")
-	public List<Integer> getFileIds() {
+	public List<Long> getFileIds() {
 		return fileIds;
 	}
 
 	@JsonProperty("file_ids")
-	public void setFileIds(List<Integer> fileIds) {
+	public void setFileIds(List<Long> fileIds) {
 		this.fileIds = fileIds;
 	}
 

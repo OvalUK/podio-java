@@ -26,7 +26,7 @@ public class CalendarAPI extends BaseAPI {
 	}
 
 	private List<Event> getCalendar(String path, LocalDate dateFrom,
-			LocalDate dateTo, List<Integer> spaceIds, ReferenceType... types) {
+			LocalDate dateTo, List<Long> spaceIds, ReferenceType... types) {
 		WebResource resource = getResourceFactory().getApiResource(
 				"/calendar/" + path + "/");
 		resource = resource.queryParam("date_from",
@@ -101,7 +101,7 @@ public class CalendarAPI extends BaseAPI {
 	 * @return The events in the calendar
 	 */
 	public List<Event> getGlobal(LocalDate dateFrom, LocalDate dateTo,
-			List<Integer> spaceIds, ReferenceType... types) {
+			List<Long> spaceIds, ReferenceType... types) {
 		return getCalendar("", dateFrom, dateTo, spaceIds, types);
 	}
 }

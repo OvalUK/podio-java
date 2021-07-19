@@ -8,16 +8,16 @@ public class StatusCreate {
 
 	private String value;
 
-	private List<Integer> alerts;
+	private List<Long> alerts;
 
-	private List<Integer> fileIds;
+	private List<Long> fileIds;
 
 	public StatusCreate() {
 		super();
 	}
 
-	public StatusCreate(String value, List<Integer> alerts,
-			List<Integer> fileIds) {
+	public StatusCreate(String value, List<Long> alerts,
+			List<Long> fileIds) {
 		super();
 		this.value = value;
 		this.alerts = alerts;
@@ -38,7 +38,7 @@ public class StatusCreate {
 		this.value = value;
 	}
 
-	public List<Integer> getAlerts() {
+	public List<Long> getAlerts() {
 		return alerts;
 	}
 
@@ -48,12 +48,12 @@ public class StatusCreate {
 	 * @param alerts
 	 *            The ids of the users to alert
 	 */
-	public void setAlerts(List<Integer> alerts) {
+	public void setAlerts(List<Long> alerts) {
 		this.alerts = alerts;
 	}
 
 	@JsonProperty("file_ids")
-	public List<Integer> getFileIds() {
+	public List<Long> getFileIds() {
 		return fileIds;
 	}
 
@@ -64,7 +64,7 @@ public class StatusCreate {
 	 *            The id of the files already uploaded that should be attached
 	 *            to this status
 	 */
-	public void setFileIds(List<Integer> fileIds) {
+	public void setFileIds(List<Long> fileIds) {
 		this.fileIds = fileIds;
 	}
 

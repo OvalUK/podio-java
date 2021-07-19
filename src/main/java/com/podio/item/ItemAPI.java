@@ -185,7 +185,7 @@ public class ItemAPI extends BaseAPI {
 	 * @return The items that were valid for the field and with text matching
 	 */
 	public List<ItemMini> getItemsByFieldAndTitle(long fieldId, String text,
-												List<Integer> notItemIds, Integer limit) {
+												List<Long> notItemIds, Integer limit) {
 		WebResource resource = getResourceFactory().getApiResource(
 			"/item/field/" + fieldId + "/find");
 

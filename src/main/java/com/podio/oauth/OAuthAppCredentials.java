@@ -19,7 +19,7 @@ public class OAuthAppCredentials implements OAuthUserCredentials {
 	}
 
 	public void addParameters(MultivaluedMap<String, String> map) {
-		map.add("app_id", Integer.toString(appId));
+		map.add("app_id", Long.toString(appId));
 		map.add("app_token", appToken);
 	}
 

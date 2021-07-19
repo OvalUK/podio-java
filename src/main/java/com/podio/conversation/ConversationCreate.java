@@ -8,10 +8,10 @@ public class ConversationCreate {
 
 	private final String text;
 
-	private final List<Integer> participants;
+	private final List<Long> participants;
 
 	public ConversationCreate(String subject, String text,
-			List<Integer> participants) {
+			List<Long> participants) {
 		super();
 		this.subject = subject;
 		this.text = text;
@@ -26,7 +26,7 @@ public class ConversationCreate {
 		return text;
 	}
 
-	public List<Integer> getParticipants() {
+	public List<Long> getParticipants() {
 		return participants;
 	}
 }

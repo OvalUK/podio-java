@@ -2,73 +2,73 @@ package com.podio.search;
 
 public class Counts {
     
-	private Integer item;
+	private Long item;
         
-	private Integer task;
+	private Long task;
         
-	private Integer conversation;
+	private Long conversation;
         
-	private Integer app;
+	private Long app;
         
-	private Integer status;
+	private Long status;
         
-	private Integer file;
+	private Long file;
         
-	private Integer profile;
+	private Long profile;
 
-        public Integer getItem() {
+        public Long getItem() {
                 return item;
         }
 
-        public void setItem(Integer item) {
+        public void setItem(Long item) {
                 this.item = item;
         }
 
-        public Integer getTask() {
+        public Long getTask() {
                 return task;
         }
 
-        public void setTask(Integer task) {
+        public void setTask(Long task) {
                 this.task = task;
         }
 
-        public Integer getConversation() {
+        public Long getConversation() {
                 return conversation;
         }
 
-        public void setConversation(Integer conversation) {
+        public void setConversation(Long conversation) {
                 this.conversation = conversation;
         }
 
-        public Integer getApp() {
+        public Long getApp() {
                 return app;
         }
 
-        public void setApp(Integer app) {
+        public void setApp(Long app) {
                 this.app = app;
         }
 
-        public Integer getStatus() {
+        public Long getStatus() {
                 return status;
         }
 
-        public void setStatus(Integer status) {
+        public void setStatus(Long status) {
                 this.status = status;
         }
 
-        public Integer getFile() {
+        public Long getFile() {
                 return file;
         }
 
-        public void setFile(Integer file) {
+        public void setFile(Long file) {
                 this.file = file;
         }
 
-        public Integer getProfile() {
+        public Long getProfile() {
                 return profile;
         }
 
-        public void setProfile(Integer profile) {
+        public void setProfile(Long profile) {
                 this.profile = profile;
         }
 

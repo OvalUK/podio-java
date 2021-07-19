@@ -36,7 +36,7 @@ public class SpaceInvitation {
 	/**
 	 * The list of user ids of existing Podio users
 	 */
-	private List<Integer> users;
+	private List<Long> users;
 
 	/**
 	 * The list of mail addresses for new or existing Podio users
@@ -44,7 +44,7 @@ public class SpaceInvitation {
 	private List<String> mails;
 
 	public SpaceInvitation(Role role, String subject, String message,
-			boolean resend, boolean notify, List<Integer> users,
+			boolean resend, boolean notify, List<Long> users,
 			List<String> mails) {
 		super();
 		this.role = role;
@@ -96,11 +96,11 @@ public class SpaceInvitation {
 		this.notify = notify;
 	}
 
-	public List<Integer> getUsers() {
+	public List<Long> getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<Integer> users) {
+	public void setUsers(List<Long> users) {
 		this.users = users;
 	}
 

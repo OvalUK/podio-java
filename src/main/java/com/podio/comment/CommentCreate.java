@@ -20,21 +20,21 @@ public class CommentCreate {
 	/**
 	 * The users who should be alerted about this comment
 	 */
-	private List<Integer> alerts;
+	private List<Long> alerts;
 
 	/**
 	 * Temporary files that have been uploaded and should be attached to this
 	 * comment
 	 */
-	private List<Integer> fileIds;
+	private List<Long> fileIds;
 
 	public CommentCreate(String value) {
-		this(value, null, Collections.<Integer> emptyList(), Collections
-				.<Integer> emptyList());
+		this(value, null, Collections.<Long> emptyList(), Collections
+				.<Long> emptyList());
 	}
 
-	public CommentCreate(String value, String externalId, List<Integer> alerts,
-			List<Integer> fileIds) {
+	public CommentCreate(String value, String externalId, List<Long> alerts,
+			List<Long> fileIds) {
 		super();
 		this.value = value;
 		this.externalId = externalId;
@@ -59,20 +59,20 @@ public class CommentCreate {
 		this.externalId = externalId;
 	}
 
-	public List<Integer> getAlerts() {
+	public List<Long> getAlerts() {
 		return alerts;
 	}
 
-	public void setAlerts(List<Integer> alerts) {
+	public void setAlerts(List<Long> alerts) {
 		this.alerts = alerts;
 	}
 
 	@JsonProperty("file_ids")
-	public List<Integer> getFileIds() {
+	public List<Long> getFileIds() {
 		return fileIds;
 	}
 
-	public void setFileIds(List<Integer> fileIds) {
+	public void setFileIds(List<Long> fileIds) {
 		this.fileIds = fileIds;
 	}
 }

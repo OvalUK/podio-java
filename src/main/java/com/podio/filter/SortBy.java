@@ -1,6 +1,6 @@
 package com.podio.filter;
 
-public longerface SortBy {
+public interface SortBy {
 
 	String getKey();
 }

@@ -11,6 +11,6 @@ public abstract class FieldFilterBy<T> implements FilterBy<T> {
 
 	@Override
 	public final String getKey() {
-		return Integer.toString(fieldId);
+		return Long.toString(fieldId);
 	}
 }

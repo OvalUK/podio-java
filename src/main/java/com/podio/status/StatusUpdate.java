@@ -8,13 +8,13 @@ public class StatusUpdate {
 
 	private String value;
 
-	private List<Integer> fileIds;
+	private List<Long> fileIds;
 
 	public StatusUpdate() {
 		super();
 	}
 
-	public StatusUpdate(String value, List<Integer> fileIds) {
+	public StatusUpdate(String value, List<Long> fileIds) {
 		super();
 		this.value = value;
 		this.fileIds = fileIds;
@@ -35,7 +35,7 @@ public class StatusUpdate {
 	}
 
 	@JsonProperty("file_ids")
-	public List<Integer> getFileIds() {
+	public List<Long> getFileIds() {
 		return fileIds;
 	}
 
@@ -46,7 +46,7 @@ public class StatusUpdate {
 	 *            The id of the files already uploaded that should be attached
 	 *            to this status
 	 */
-	public void setFileIds(List<Integer> fileIds) {
+	public void setFileIds(List<Long> fileIds) {
 		this.fileIds = fileIds;
 	}
 }

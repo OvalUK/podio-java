@@ -11,7 +11,7 @@ public class FieldValuesUpdate {
 	/**
 	 * The id of the field
 	 */
-	private Integer id;
+	private Long id;
 
 	/**
 	 * The external id of the field
@@ -66,12 +66,12 @@ public class FieldValuesUpdate {
 	}
 
 	@JsonProperty("field_id")
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
 	@JsonProperty("field_id")
-	public void setId(Integer fieldId) {
+	public void setId(Long fieldId) {
 		this.id = fieldId;
 	}
 

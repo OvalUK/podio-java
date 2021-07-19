@@ -44,7 +44,7 @@ public class Task extends CreatedBase {
 	/**
 	 * The id of the space the task is on, if any
 	 */
-	private Integer spaceId;
+	private Long spaceId;
 
 	/**
 	 * The link to the task
@@ -69,7 +69,7 @@ public class Task extends CreatedBase {
 	/**
 	 * The id of the reference, if any
 	 */
-	private Integer referenceId;
+	private Long referenceId;
 
 	/**
 	 * The title of the reference, if any
@@ -146,12 +146,12 @@ public class Task extends CreatedBase {
 	}
 
 	@JsonProperty("space_id")
-	public Integer getSpaceId() {
+	public Long getSpaceId() {
 		return spaceId;
 	}
 
 	@JsonProperty("space_id")
-	public void setSpaceId(Integer spaceId) {
+	public void setSpaceId(Long spaceId) {
 		this.spaceId = spaceId;
 	}
 
@@ -194,12 +194,12 @@ public class Task extends CreatedBase {
 	}
 
 	@JsonProperty("ref_id")
-	public Integer getReferenceId() {
+	public Long getReferenceId() {
 		return referenceId;
 	}
 
 	@JsonProperty("ref_id")
-	public void setReferenceId(Integer referenceId) {
+	public void setReferenceId(Long referenceId) {
 		this.referenceId = referenceId;
 	}
 

@@ -19,12 +19,12 @@ public class Application implements Serializable {
 	/**
 	 * The original app that this app was a copy of
 	 */
-	private Integer original;
+	private Long original;
 
 	/**
 	 * The revision of the original app at the time of copy
 	 */
-	private Integer originalRevision;
+	private Long originalRevision;
 
 	/**
 	 * The id of the space on which the app is placed
@@ -53,21 +53,21 @@ public class Application implements Serializable {
 		this.id = id;
 	}
 
-	public Integer getOriginal() {
+	public Long getOriginal() {
 		return original;
 	}
 
-	public void setOriginal(Integer original) {
+	public void setOriginal(Long original) {
 		this.original = original;
 	}
 
 	@JsonProperty("original_revision")
-	public Integer getOriginalRevision() {
+	public Long getOriginalRevision() {
 		return originalRevision;
 	}
 
 	@JsonProperty("original_revision")
-	public void setOriginalRevision(Integer originalRevision) {
+	public void setOriginalRevision(Long originalRevision) {
 		this.originalRevision = originalRevision;
 	}
 

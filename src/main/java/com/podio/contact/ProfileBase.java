@@ -11,18 +11,18 @@ public class ProfileBase implements Serializable {
 	/**
 	 * The id of the profile
 	 */
-	private long profileId;
+	private Long profileId;
 
 	/**
 	 * The id of the user
 	 */
-	private Integer userId;
+	private Long userId;
 
 	@Override
-	public long hashCode() {
+	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + profileId;
+		result = prime * result + profileId.intValue();
 		return result;
 	}
 
@@ -41,22 +41,22 @@ public class ProfileBase implements Serializable {
 	}
 
 	@JsonProperty("profile_id")
-	public long getProfileId() {
+	public Long getProfileId() {
 		return profileId;
 	}
 
 	@JsonProperty("profile_id")
-	public void setProfileId(long profileId) {
+	public void setProfileId(Long profileId) {
 		this.profileId = profileId;
 	}
 
 	@JsonProperty("user_id")
-	public Integer getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
 	@JsonProperty("user_id")
-	public void setUserId(Integer userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 

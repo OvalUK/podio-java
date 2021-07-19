@@ -52,7 +52,7 @@ public class Reference {
 	public static Reference parse(String value) {
 		String[] split = value.split(":");
 		ReferenceType type = ReferenceType.getByName(split[0]);
-		long id = Integer.parseInt(split[1]);
+		long id = Long.parseLong(split[1]);
 
 		return new Reference(type, id);
 	}

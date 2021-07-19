@@ -10,7 +10,7 @@ public class Dependencies implements Serializable {
 
 	private List<Application> apps;
 
-	private Map<Integer, List<Integer>> dependencies;
+	private Map<Long, List<Long>> dependencies;
 
 	public List<Application> getApps() {
 		return apps;
@@ -20,11 +20,11 @@ public class Dependencies implements Serializable {
 		this.apps = apps;
 	}
 
-	public Map<Integer, List<Integer>> getDependencies() {
+	public Map<Long, List<Long>> getDependencies() {
 		return dependencies;
 	}
 
-	public void setDependencies(Map<Integer, List<Integer>> dependencies) {
+	public void setDependencies(Map<Long, List<Long>> dependencies) {
 		this.dependencies = dependencies;
 	}
 }

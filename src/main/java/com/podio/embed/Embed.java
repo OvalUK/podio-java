@@ -44,7 +44,7 @@ public class Embed implements Serializable {
 	/**
 	 * Width of the embedded object
 	 */
-	private Integer embedWidth;
+	private Long embedWidth;
 
 	/**
 	 * Height of the embedded object
@@ -110,12 +110,12 @@ public class Embed implements Serializable {
 		this.embedHtml = embedHtml;
 	}
 
-	public Integer getEmbedWidth() {
+	public Long getEmbedWidth() {
 		return embedWidth;
 	}
 
 	@JsonProperty("embed_width")
-	public void setEmbedWidth(Integer embedWidth) {
+	public void setEmbedWidth(Long embedWidth) {
 		this.embedWidth = embedWidth;
 	}
 

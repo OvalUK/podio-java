@@ -21,13 +21,13 @@ public class CommentUpdate {
 	 * Temporary files that have been uploaded and should be attached to this
 	 * comment
 	 */
-	private List<Integer> fileIds;
+	private List<Long> fileIds;
 
 	public CommentUpdate(String value) {
-		this(value, Collections.<Integer> emptyList());
+		this(value, Collections.<Long> emptyList());
 	}
 
-	public CommentUpdate(String value, List<Integer> fileIds) {
+	public CommentUpdate(String value, List<Long> fileIds) {
 		super();
 		this.value = value;
 		this.fileIds = fileIds;
@@ -51,11 +51,11 @@ public class CommentUpdate {
 	}
 
 	@JsonProperty("file_ids")
-	public List<Integer> getFileIds() {
+	public List<Long> getFileIds() {
 		return fileIds;
 	}
 
-	public void setFileIds(List<Integer> fileIds) {
+	public void setFileIds(List<Long> fileIds) {
 		this.fileIds = fileIds;
 	}
 }

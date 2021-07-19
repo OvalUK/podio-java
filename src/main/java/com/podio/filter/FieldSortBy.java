@@ -11,6 +11,6 @@ public class FieldSortBy implements SortBy {
 
 	@Override
 	public String getKey() {
-		return Integer.toString(fieldId);
+		return Long.toString(fieldId);
 	}
 }

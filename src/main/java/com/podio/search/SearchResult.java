@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
 
 public class SearchResult {
         
-	private Integer id;
+	private Long id;
 
 	private ReferenceTypeSearchInApp type;
 

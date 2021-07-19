@@ -31,12 +31,12 @@ public class SpaceMemberAdd {
 	/**
 	 * The list of users ids to invite
 	 */
-	private List<Integer> users;
+	private List<Long> users;
 	
 	/**
 	 * The list of profile ids to invite to the space
 	 */
-	private List<Integer> profiles;
+	private List<Long> profiles;
 	
 	/**
 	 * The list of mail addresses for new or existing Podio users
@@ -46,7 +46,7 @@ public class SpaceMemberAdd {
 	/**
 	 * The external contacts to invite
 	 */
-	private MultivaluedMap<Integer, String> externalContacts;
+	private MultivaluedMap<Long, String> externalContacts;
 	
 	/**
 	 * Optionally specify "item" to indicate invite to a specific item
@@ -94,28 +94,28 @@ public class SpaceMemberAdd {
 	/**
 	 * @return the users
 	 */
-	public List<Integer> getUsers() {
+	public List<Long> getUsers() {
 		return users;
 	}
 
 	/**
 	 * @param users the users to set
 	 */
-	public void setUsers(List<Integer> users) {
+	public void setUsers(List<Long> users) {
 		this.users = users;
 	}
 	
 	/**
 	 * @return the profiles
 	 */
-	public List<Integer> getProfiles() {
+	public List<Long> getProfiles() {
 		return profiles;
 	}
 
 	/**
 	 * @param profiles the profiles to set
 	 */
-	public void setProfiles(List<Integer> profiles) {
+	public void setProfiles(List<Long> profiles) {
 		this.profiles = profiles;
 	}
 
@@ -137,7 +137,7 @@ public class SpaceMemberAdd {
 	 * @return the externalContacts
 	 */
 	@JsonProperty("external_contacts")
-	public MultivaluedMap<Integer, String> getExternalContacts() {
+	public MultivaluedMap<Long, String> getExternalContacts() {
 		return externalContacts;
 	}
 
@@ -145,7 +145,7 @@ public class SpaceMemberAdd {
 	 * @param externalContacts the externalContacts to set
 	 */
 	@JsonProperty("external_contacts")
-	public void setExternalContacts(MultivaluedMap<Integer, String> externalContacts) {
+	public void setExternalContacts(MultivaluedMap<Long, String> externalContacts) {
 		this.externalContacts = externalContacts;
 	}
 	

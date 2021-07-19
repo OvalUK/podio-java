@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.podio.common.CSVUtil;
 
-public abstract class BaseIntListFilterBy implements FilterBy<List<Integer>> {
+public abstract class BaseIntListFilterBy implements FilterBy<List<Long>> {
 
 	@Override
-	public final String format(List<Integer> values) {
+	public final String format(List<Long> values) {
 		return CSVUtil.toCSV(values);
 	}
 }

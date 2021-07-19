@@ -2,7 +2,7 @@ package com.podio.oauth;
 
 import javax.ws.rs.core.MultivaluedMap;
 
-public longerface OAuthUserCredentials {
+public interface OAuthUserCredentials {
 
 	String getType();
 

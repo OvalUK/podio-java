@@ -30,7 +30,7 @@ public class ConversationAPI extends BaseAPI {
 	 * @return The id of the newly created conversation
 	 */
 	public long createConversation(String subject, String text,
-			List<Integer> participants) {
+			List<Long> participants) {
 		return createConversation(subject, text, participants, null);
 	}
 
@@ -50,7 +50,7 @@ public class ConversationAPI extends BaseAPI {
 	 * @return The id of the newly created conversation
 	 */
 	public long createConversation(String subject, String text,
-			List<Integer> participants, Reference reference) {
+			List<Long> participants, Reference reference) {
 		WebResource resource;
 		if (reference != null) {
 			resource = getResourceFactory().getApiResource(

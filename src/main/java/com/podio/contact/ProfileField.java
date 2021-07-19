@@ -22,7 +22,7 @@ public abstract class ProfileField<F, R> {
 	/**
 	 * The file id of the avatar
 	 */
-	public static final ProfileField<Integer, Integer> AVATAR = new IntegerProfileField(
+	public static final ProfileField<Long, Long> AVATAR = new LongProfileField(
 			"avatar", true);
 
 	/**
@@ -139,20 +139,20 @@ public abstract class ProfileField<F, R> {
 		}
 	}
 
-	private static class IntegerProfileField extends
-			ProfileField<Integer, Integer> {
+	private static class LongProfileField extends
+			ProfileField<Long, Long> {
 
-		public IntegerProfileField(String name, boolean single) {
+		public LongProfileField(String name, boolean single) {
 			super(name, single);
 		}
 
 		@Override
-		public Integer parse(Integer object) {
+		public Long parse(Long object) {
 			return object;
 		}
 
 		@Override
-		public Integer format(Integer object) {
+		public Long format(Long object) {
 			return object;
 		}
 	}

@@ -13,7 +13,7 @@ public class ApplicationFieldSettings implements Serializable {
 
 	private List<String> allowedValues;
 
-	private List<Integer> referenceableTypes;
+	private List<Long> referenceableTypes;
 
 	private List<String> allowedCurrencies;
 
@@ -34,7 +34,7 @@ public class ApplicationFieldSettings implements Serializable {
 	}
 
 	public ApplicationFieldSettings(TextFieldSize size,
-			List<String> allowedValues, List<Integer> referenceableTypes,
+			List<String> allowedValues, List<Long> referenceableTypes,
 			List<String> allowedCurrencies, List<CategoryOption> options,
 			Boolean multiple) {
 		super();
@@ -67,12 +67,12 @@ public class ApplicationFieldSettings implements Serializable {
 	}
 
 	@JsonProperty("referenceable_types")
-	public List<Integer> getReferenceableTypes() {
+	public List<Long> getReferenceableTypes() {
 		return referenceableTypes;
 	}
 
 	@JsonProperty("referenceable_types")
-	public void setReferenceableTypes(List<Integer> referenceableTypes) {
+	public void setReferenceableTypes(List<Long> referenceableTypes) {
 		this.referenceableTypes = referenceableTypes;
 	}
 
@@ -115,7 +115,7 @@ public class ApplicationFieldSettings implements Serializable {
 	}
 
 	public static ApplicationFieldSettings getApp(
-			List<Integer> referenceableTypes) {
+			List<Long> referenceableTypes) {
 		return new ApplicationFieldSettings(null, null, referenceableTypes,
 				null, null, null);
 	}

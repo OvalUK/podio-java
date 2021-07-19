@@ -16,7 +16,7 @@ public class ContactCreate {
         /**
          * The file id of the avatar
          */
-        private Integer avatar;
+        private Long avatar;
 
         /**
          * The birthdate
@@ -116,7 +116,7 @@ public class ContactCreate {
                         Collections.<String>emptyList(), Collections.<String>emptyList());
         }
 
-        public ContactCreate(String name, Integer avatar, LocalDate birthdate,
+        public ContactCreate(String name, Long avatar, LocalDate birthdate,
                         String organization, String department, String skype, String about,
                         List<String> addresses, String zip, String city, String state,
                         String country, List<String> locations, List<String> mails,
@@ -154,11 +154,11 @@ public class ContactCreate {
                 this.name = name;
         }
 
-        public Integer getAvatar() {
+        public Long getAvatar() {
                 return avatar;
         }
 
-        public void setAvatar(Integer avatar) {
+        public void setAvatar(Long avatar) {
                 this.avatar = avatar;
         }
 

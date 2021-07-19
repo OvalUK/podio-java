@@ -15,7 +15,7 @@ public class AuthorizationEntity implements Serializable {
 
 	private AvatarType avatarType;
 
-	private Integer avatarId;
+	private Long avatarId;
 
 	private String name;
 
@@ -46,12 +46,12 @@ public class AuthorizationEntity implements Serializable {
 		this.avatarType = avatarType;
 	}
 
-	public Integer getAvatarId() {
+	public Long getAvatarId() {
 		return avatarId;
 	}
 
 	@JsonProperty("avatar_id")
-	public void setAvatarId(Integer avatarId) {
+	public void setAvatarId(Long avatarId) {
 		this.avatarId = avatarId;
 	}
 

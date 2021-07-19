@@ -88,7 +88,7 @@ public class FileAPI extends BaseAPI {
 		return resource.post(File.class).getId();
 	}
 
-	public Integer uploadImage(URL url) throws IOException {
+	public Long uploadImage(URL url) throws IOException {
 		return uploadImage(url, null);
 	}
 
@@ -96,7 +96,7 @@ public class FileAPI extends BaseAPI {
 		java.io.File file = readURL(url);
 		try {
 			String path = url.getPath();
-			long lastSlashIdx = path.lastIndexOf('/');
+			int lastSlashIdx = path.lastIndexOf('/');
 			if (name == null) {
 				name = path.substring(lastSlashIdx + 1);
 			}

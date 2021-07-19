@@ -17,7 +17,7 @@ public class ProfileUpdate {
 	/**
 	 * The file id of the avatar
 	 */
-	private Integer avatar;
+	private Long avatar;
 	
 	/**
 	 * The image details for the user
@@ -107,11 +107,11 @@ public class ProfileUpdate {
 		this.name = name;
 	}
 
-	public Integer getAvatar() {
+	public Long getAvatar() {
 		return avatar;
 	}
 
-	public void setAvatar(Integer avatar) {
+	public void setAvatar(Long avatar) {
 		this.avatar = avatar;
 	}
 

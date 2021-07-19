@@ -13,7 +13,7 @@ public class Profile extends ProfileUpdate {
 	/**
 	 * The id of the user
 	 */
-	private Integer userId;
+	private Long userId;
 	
 	/**
 	 * The last time the user was seen
@@ -31,12 +31,12 @@ public class Profile extends ProfileUpdate {
 	}
 
 	@JsonProperty("user_id")
-	public Integer getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
 	@JsonProperty("user_id")
-	public void setUserId(Integer userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
