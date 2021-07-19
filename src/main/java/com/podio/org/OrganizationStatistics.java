@@ -8,12 +8,12 @@ public class OrganizationStatistics {
 	/**
 	 * The id of the org
 	 */
-	private int id;
+	private long id;
 
 	/**
 	 * number of all items in all apps in all spaces
 	 */
-	private int itemsCount;
+	private long itemsCount;
 
 	/**
 	 * time when a user last logged in
@@ -40,21 +40,21 @@ public class OrganizationStatistics {
 	 */
 	private int usersCount;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
 	@JsonProperty("org_id")
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
-	public int getItemsCount() {
+	public long getItemsCount() {
 		return itemsCount;
 	}
 
 	@JsonProperty("items_count")
-	public void setItemsCount(int itemsCount) {
+	public void setItemsCount(long itemsCount) {
 		this.itemsCount = itemsCount;
 	}
 
@@ -67,7 +67,7 @@ public class OrganizationStatistics {
 		this.lastActivityOn = lastActivityOn;
 	}
 
-	public int getAvailableInvitations() {
+	public long getAvailableInvitations() {
 		return availableInvitations;
 	}
 
@@ -76,7 +76,7 @@ public class OrganizationStatistics {
 		this.availableInvitations = availableInvitations;
 	}
 
-	public int getAppsCount() {
+	public long getAppsCount() {
 		return appsCount;
 	}
 
@@ -85,7 +85,7 @@ public class OrganizationStatistics {
 		this.appsCount = appsCount;
 	}
 
-	public int getSpacesCount() {
+	public long getSpacesCount() {
 		return spacesCount;
 	}
 
@@ -94,7 +94,7 @@ public class OrganizationStatistics {
 		this.spacesCount = spacesCount;
 	}
 
-	public int getUsersCount() {
+	public long getUsersCount() {
 		return usersCount;
 	}
 

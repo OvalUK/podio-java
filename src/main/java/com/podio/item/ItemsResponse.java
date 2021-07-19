@@ -25,7 +25,7 @@ public class ItemsResponse {
 				+ ", items=" + items + "]";
 	}
 
-	public int getTotal() {
+	public long getTotal() {
 		return total;
 	}
 
@@ -33,7 +33,7 @@ public class ItemsResponse {
 		this.total = total;
 	}
 
-	public int getFiltered() {
+	public long getFiltered() {
 		return filtered;
 	}
 

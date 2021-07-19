@@ -9,7 +9,7 @@ public class AssignValue {
 		this.responsible = responsible;
 	}
 
-	public int getResponsible() {
+	public long getResponsible() {
 		return responsible;
 	}
 }

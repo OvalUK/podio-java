@@ -68,7 +68,7 @@ public class SpaceMemberV2 {
 	/**
 	 * @return the grants
 	 */
-	public int getGrants() {
+	public long getGrants() {
 		return grants;
 	}
 	

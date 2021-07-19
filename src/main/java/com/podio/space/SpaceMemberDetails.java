@@ -18,7 +18,7 @@ public class SpaceMemberDetails {
 		return role;
 	}
 
-	public int getGrants() {
+	public long getGrants() {
 		return grants;
 	}
 }

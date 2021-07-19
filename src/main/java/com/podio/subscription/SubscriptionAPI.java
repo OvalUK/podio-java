@@ -24,7 +24,7 @@ public class SubscriptionAPI extends BaseAPI {
 	 *            The id of the subscription
 	 * @return The subscription
 	 */
-	public Subscription getSubscription(int susbcriptionId) {
+	public Subscription getSubscription(long susbcriptionId) {
 		return getResourceFactory().getApiResource(
 				"/subscription/" + susbcriptionId).get(Subscription.class);
 	}
@@ -63,7 +63,7 @@ public class SubscriptionAPI extends BaseAPI {
 	 * @param subscriptionId
 	 *            The id of the subscription
 	 */
-	public void unsubscribe(int subscriptionId) {
+	public void unsubscribe(long subscriptionId) {
 		getResourceFactory().getApiResource("/subscription/" + subscriptionId)
 				.delete();
 	}

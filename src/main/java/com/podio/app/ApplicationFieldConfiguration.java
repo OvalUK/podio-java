@@ -64,7 +64,7 @@ public class ApplicationFieldConfiguration implements Serializable {
 		this.description = description;
 	}
 
-	public int getDelta() {
+	public long getDelta() {
 		return delta;
 	}
 

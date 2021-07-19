@@ -22,11 +22,11 @@ public final class ProgressInterval {
 		}
 	}
 
-	public int getFrom() {
+	public long getFrom() {
 		return from;
 	}
 
-	public int getTo() {
+	public long getTo() {
 		return to;
 	}
 }

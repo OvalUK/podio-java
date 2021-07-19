@@ -66,7 +66,7 @@ public class OrganizationMember {
 	}
 
 	@JsonProperty("space_memberships")
-	public int getSpaceMemberships() {
+	public long getSpaceMemberships() {
 		return spaceMemberships;
 	}
 

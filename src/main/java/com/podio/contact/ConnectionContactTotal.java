@@ -6,7 +6,7 @@ public class ConnectionContactTotal {
 
 	private int count;
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

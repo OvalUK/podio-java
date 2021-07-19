@@ -102,7 +102,7 @@ public class TagAPI extends BaseAPI {
 	 *            The id of the app to return tags from *
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnApp(int appId) {
+	public List<TagCount> getTagsOnApp(long appId) {
 		return getResourceFactory().getApiResource("/tag/app/" + appId + "/")
 				.get(new GenericType<List<TagCount>>() { });
 	}
@@ -118,7 +118,7 @@ public class TagAPI extends BaseAPI {
 	 *            returned and/or text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnApp(int appId, MultivaluedMap<String, String> options) {
+	public List<TagCount> getTagsOnApp(long appId, MultivaluedMap<String, String> options) {
 		return getResourceFactory()
 				.getApiResource("/tag/app/" + appId + "/")
 				.queryParams(options)
@@ -137,7 +137,7 @@ public class TagAPI extends BaseAPI {
 	 *            text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnApp(int appId, int limit, String text) {
+	public List<TagCount> getTagsOnApp(long appId, int limit, String text) {
 		MultivaluedMap<String, String> params=new MultivaluedMapImpl();
 		params.add("limit", new Integer(limit).toString());
 		if ((text != null) && (!text.isEmpty())) {
@@ -156,7 +156,7 @@ public class TagAPI extends BaseAPI {
 	 *            The id of the org to return tags from
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnOrg(int orgId) {
+	public List<TagCount> getTagsOnOrg(long orgId) {
 		return getResourceFactory()
 				.getApiResource("/tag/org/" + orgId + "/")
 				.get(new GenericType<List<TagCount>>() { });
@@ -175,7 +175,7 @@ public class TagAPI extends BaseAPI {
 	 *            returned and/or text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnOrg(int orgId, MultivaluedMap<String, String> options) {
+	public List<TagCount> getTagsOnOrg(long orgId, MultivaluedMap<String, String> options) {
 		return getResourceFactory()
 				.getApiResource("/tag/org/" + orgId + "/")
 				.queryParams(options)
@@ -196,7 +196,7 @@ public class TagAPI extends BaseAPI {
 	 *            text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnOrg(int orgId, int limit, String text) {
+	public List<TagCount> getTagsOnOrg(long orgId, int limit, String text) {
 		MultivaluedMap<String, String> params=new MultivaluedMapImpl();
 		params.add("limit", new Integer(limit).toString());
 		if ((text != null) && (!text.isEmpty())) {
@@ -214,7 +214,7 @@ public class TagAPI extends BaseAPI {
 	 *            The id of the space to return tags from
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnSpace(int spaceId) {
+	public List<TagCount> getTagsOnSpace(long spaceId) {
 		return getResourceFactory()
 				.getApiResource("/tag/space/" + spaceId + "/")
 				.get(new GenericType<List<TagCount>>() { });
@@ -232,7 +232,7 @@ public class TagAPI extends BaseAPI {
 	 *            returned and/or text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnSpace(int spaceId, MultivaluedMap<String, String> options) {
+	public List<TagCount> getTagsOnSpace(long spaceId, MultivaluedMap<String, String> options) {
 		return getResourceFactory()
 				.getApiResource("/tag/space/" + spaceId + "/")
 				.queryParams(options)
@@ -252,7 +252,7 @@ public class TagAPI extends BaseAPI {
 	 *            text of tag to search for
 	 * @return The list of tags with their count
 	 */
-	public List<TagCount> getTagsOnSpace(int spaceId, int limit, String text) {
+	public List<TagCount> getTagsOnSpace(long spaceId, int limit, String text) {
 		MultivaluedMap<String, String> params=new MultivaluedMapImpl();
 		params.add("limit", new Integer(limit).toString());
 		if ((text != null) && (!text.isEmpty())) {
@@ -271,7 +271,7 @@ public class TagAPI extends BaseAPI {
 	 *            The tag to search for
 	 * @return The list of objects in the app that have the given tag
 	 */
-	public List<TagReference> getTagsOnAppWithText(int appId, String text) {
+	public List<TagReference> getTagsOnAppWithText(long appId, String text) {
 		return getResourceFactory()
 				.getApiResource("/tag/app/" + appId + "/search/")
 				.queryParam("text", text)
@@ -289,7 +289,7 @@ public class TagAPI extends BaseAPI {
 	 *            The tag to search for
 	 * @return The list of objects in the org that have the given tag
 	 */
-	public List<TagReference> getTagsOnOrgWithText(int orgId, String text) {
+	public List<TagReference> getTagsOnOrgWithText(long orgId, String text) {
 		return getResourceFactory()
 				.getApiResource("/tag/org/" + orgId + "/search/")
 				.queryParam("text", text)
@@ -307,7 +307,7 @@ public class TagAPI extends BaseAPI {
 	 *            The tag to search for
 	 * @return The list of objects in the space that have the given tag
 	 */
-	public List<TagReference> getTagsOnSpaceWithText(int spaceId, String text) {
+	public List<TagReference> getTagsOnSpaceWithText(long spaceId, String text) {
 		return getResourceFactory()
 				.getApiResource("/tag/space/" + spaceId + "/search/")
 				.queryParam("text", text)

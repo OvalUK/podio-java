@@ -2,7 +2,7 @@ package com.podio.filter;
 
 public class ProgressFieldFilterBy extends FieldFilterBy<ProgressInterval> {
 
-	public ProgressFieldFilterBy(int fieldId) {
+	public ProgressFieldFilterBy(long fieldId) {
 		super(fieldId);
 	}
 

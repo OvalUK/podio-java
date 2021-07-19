@@ -1,6 +1,6 @@
 package com.podio.filter;
 
-public interface FilterBy<T> {
+public longerface FilterBy<T> {
 
 	String getKey();
 

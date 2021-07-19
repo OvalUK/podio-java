@@ -35,7 +35,7 @@ public class FileAPI extends BaseAPI {
 	 * @param silent
 	 * @param hook
 	 */
-	public void attachFile( int fileId, Map<String, Object> attributes, boolean silent, boolean hook )
+	public void attachFile( long fileId, Map<String, Object> attributes, boolean silent, boolean hook )
 	{
 		getResourceFactory()
 			.getApiResource("/file/" + fileId + "/attach")
@@ -54,7 +54,7 @@ public class FileAPI extends BaseAPI {
 	 * @throws IOException
 	 *             If there was an error reading or writing the file
 	 */
-	public void downloadFile(int fileId, java.io.File target, FileSize size)
+	public void downloadFile(long fileId, java.io.File target, FileSize size)
 			throws IOException {
 		WebResource builder = getResourceFactory()
 				.getFileResource("/" + fileId);
@@ -68,7 +68,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Uploads the file to the API
 	 */
-	public int uploadFile(String name, java.io.File file) {
+	public long uploadFile(String name, java.io.File file) {
 		FileDataBodyPart filePart = new FileDataBodyPart("source", file);
 		// Work around for bug in cherrypy
 		FormDataContentDisposition.FormDataContentDispositionBuilder builder = FormDataContentDisposition
@@ -92,11 +92,11 @@ public class FileAPI extends BaseAPI {
 		return uploadImage(url, null);
 	}
 
-	public int uploadImage(URL url, String name) throws IOException {
+	public long uploadImage(URL url, String name) throws IOException {
 		java.io.File file = readURL(url);
 		try {
 			String path = url.getPath();
-			int lastSlashIdx = path.lastIndexOf('/');
+			long lastSlashIdx = path.lastIndexOf('/');
 			if (name == null) {
 				name = path.substring(lastSlashIdx + 1);
 			}
@@ -129,7 +129,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Returns the file with the given id
 	 */
-	public File getFile(int fileId) {
+	public File getFile(long fileId) {
 		return getResourceFactory().getApiResource("/file/" + fileId).get(
 				File.class);
 	}
@@ -137,7 +137,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Used to update the description of the file.
 	 */
-	public void updateFile(int fileId, FileUpdate update) {
+	public void updateFile(long fileId, FileUpdate update) {
 		getResourceFactory().getApiResource("/file/" + fileId)
 				.entity(update, MediaType.APPLICATION_JSON_TYPE).put();
 	}
@@ -145,7 +145,7 @@ public class FileAPI extends BaseAPI {
 	/**
 	 * Deletes the file with the given id.
 	 */
-	public void deleteFile(int fileId) {
+	public void deleteFile(long fileId) {
 		getResourceFactory().getApiResource("/file/" + fileId).delete();
 	}
 
@@ -160,7 +160,7 @@ public class FileAPI extends BaseAPI {
 	 *            The offset to use when returning files to be used for
 	 *            pagination. Defaults to 0 (no offset).
 	 */
-	public List<File> getOnApp(int appId, Integer limit, Integer offset) {
+	public List<File> getOnApp(long appId, Integer limit, Integer offset) {
 		WebResource resource = getResourceFactory().getApiResource(
 				"/file/app/" + appId + "/");
 		if (limit != null) {
@@ -184,7 +184,7 @@ public class FileAPI extends BaseAPI {
 	 *            The offset to use when returning files to be used for
 	 *            pagination. Defaults to 0 (no offset).
 	 */
-	public List<File> getOnSpace(int spaceId, Integer limit, Integer offset) {
+	public List<File> getOnSpace(long spaceId, Integer limit, Integer offset) {
 		WebResource resource = getResourceFactory().getApiResource(
 				"/file/space/" + spaceId + "/");
 		if (limit != null) {

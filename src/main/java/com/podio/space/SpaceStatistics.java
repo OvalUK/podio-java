@@ -23,7 +23,7 @@ public class SpaceStatistics {
 	/**
 	 * Number of active item
 	 */
-	private int items;
+	private long items;
 
 	/**
 	 * Number of active statuses
@@ -44,7 +44,7 @@ public class SpaceStatistics {
 		this.createdOn = createdOn;
 	}
 
-	public int getMembers() {
+	public long getMembers() {
 		return members;
 	}
 
@@ -52,7 +52,7 @@ public class SpaceStatistics {
 		this.members = members;
 	}
 
-	public int getComments() {
+	public long getComments() {
 		return comments;
 	}
 
@@ -60,15 +60,15 @@ public class SpaceStatistics {
 		this.comments = comments;
 	}
 
-	public int getItems() {
+	public long getItems() {
 		return items;
 	}
 
-	public void setItems(int items) {
+	public void setItems(long items) {
 		this.items = items;
 	}
 
-	public int getStatuses() {
+	public long getStatuses() {
 		return statuses;
 	}
 
@@ -76,7 +76,7 @@ public class SpaceStatistics {
 		this.statuses = statuses;
 	}
 
-	public int getApps() {
+	public long getApps() {
 		return apps;
 	}
 

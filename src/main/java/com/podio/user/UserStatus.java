@@ -47,7 +47,7 @@ public class UserStatus {
 	}
 
 	@JsonProperty("inbox_new")
-	public int getInboxNew() {
+	public long getInboxNew() {
 		return inboxNew;
 	}
 
@@ -56,7 +56,7 @@ public class UserStatus {
 	}
 
 	@JsonProperty("message_unread_count")
-	public int getMessageUnreadCount() {
+	public long getMessageUnreadCount() {
 		return messageUnreadCount;
 	}
 

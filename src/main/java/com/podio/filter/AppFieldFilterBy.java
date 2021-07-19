@@ -6,7 +6,7 @@ import com.podio.common.CSVUtil;
 
 public class AppFieldFilterBy extends FieldFilterBy<List<Integer>> {
 
-	public AppFieldFilterBy(int fieldId) {
+	public AppFieldFilterBy(long fieldId) {
 		super(fieldId);
 	}
 

@@ -2,9 +2,9 @@ package com.podio.filter;
 
 public abstract class FieldFilterBy<T> implements FilterBy<T> {
 
-	private final int fieldId;
+	private final long fieldId;
 
-	public FieldFilterBy(int fieldId) {
+	public FieldFilterBy(long fieldId) {
 		super();
 		this.fieldId = fieldId;
 	}

@@ -25,7 +25,7 @@ public class TaskTotal {
 	private int total;
 
 	@JsonProperty("over_due")
-	public int getOverDue() {
+	public long getOverDue() {
 		return overDue;
 	}
 
@@ -35,7 +35,7 @@ public class TaskTotal {
 	}
 
 	@JsonProperty("due_today")
-	public int getDueToday() {
+	public long getDueToday() {
 		return dueToday;
 	}
 
@@ -44,7 +44,7 @@ public class TaskTotal {
 		this.dueToday = dueToday;
 	}
 
-	public int getStarted() {
+	public long getStarted() {
 		return started;
 	}
 
@@ -52,7 +52,7 @@ public class TaskTotal {
 		this.started = started;
 	}
 
-	public int getTotal() {
+	public long getTotal() {
 		return total;
 	}
 

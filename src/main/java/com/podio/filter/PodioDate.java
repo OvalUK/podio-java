@@ -1,6 +1,6 @@
 package com.podio.filter;
 
-public interface PodioDate {
+public longerface PodioDate {
 
 	String serialize();
 }

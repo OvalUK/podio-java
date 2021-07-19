@@ -8,7 +8,7 @@ public class Profile extends ProfileUpdate {
 	/**
 	 * The id of the profile
 	 */
-	private int profileId;
+	private long profileId;
 
 	/**
 	 * The id of the user
@@ -21,12 +21,12 @@ public class Profile extends ProfileUpdate {
 	private DateTime lastSeenOn;
 
 	@JsonProperty("profile_id")
-	public int getProfileId() {
+	public long getProfileId() {
 		return profileId;
 	}
 
 	@JsonProperty("profile_id")
-	public void setProfileId(int profileId) {
+	public void setProfileId(long profileId) {
 		this.profileId = profileId;
 	}
 

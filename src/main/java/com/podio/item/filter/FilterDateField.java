@@ -11,7 +11,7 @@ public class FilterDateField extends FilterFieldValue<FilterInterval> {
 
     private final FilterInterval values;
 
-    public FilterDateField(int fieldId, Date from, Date to) {
+    public FilterDateField(long fieldId, Date from, Date to) {
         super(fieldId);
         values = new FilterInterval();
         values.setFrom(from != null ? DATE_FORMAT.format(from) : null);

@@ -6,7 +6,7 @@ public class InboxNewCount {
 
 	private int newNotifications;
 
-	public int getNewNotifications() {
+	public long getNewNotifications() {
 		return newNotifications;
 	}
 

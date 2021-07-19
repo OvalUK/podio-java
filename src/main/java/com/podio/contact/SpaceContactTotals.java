@@ -4,7 +4,7 @@ public class SpaceContactTotals {
 
 	private int total;
 
-	public int getTotal() {
+	public long getTotal() {
 		return total;
 	}
 

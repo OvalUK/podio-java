@@ -2,36 +2,36 @@ package com.podio.view;
 
 public class View
 {
-	private int view_id;
-	private int filter_id;
+	private long view_id;
+	private long filter_id;
 	private String name;
 	private ViewGroupings groupings;
 
 	/**
 	 * @return the view_id
 	 */
-	public int getView_id()
+	public long getView_id()
 	{
 		return view_id;
 	}
 	/**
 	 * @param view_id the view_id to set
 	 */
-	public void setView_id( int view_id )
+	public void setView_id( long view_id )
 	{
 		this.view_id = view_id;
 	}
 	/**
 	 * @return the filter_id
 	 */
-	public int getFilter_id()
+	public long getFilter_id()
 	{
 		return filter_id;
 	}
 	/**
 	 * @param filter_id the filter_id to set
 	 */
-	public void setFilter_id( int filter_id )
+	public void setFilter_id( long filter_id )
 	{
 		this.filter_id = filter_id;
 	}

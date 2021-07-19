@@ -2,9 +2,9 @@ package com.podio.filter;
 
 public class DateFieldFilterBy extends BaseDateFilterBy {
 	
-	private final int fieldId;
+	private final long fieldId;
 
-	public DateFieldFilterBy(int fieldId) {
+	public DateFieldFilterBy(long fieldId) {
 		super();
 		this.fieldId = fieldId;
 	}

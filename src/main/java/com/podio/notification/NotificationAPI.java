@@ -32,7 +32,7 @@ public class NotificationAPI extends BaseAPI {
 	 * 
 	 * @return The number of unread notifications
 	 */
-	public int getInboxNewCount() {
+	public long getInboxNewCount() {
 		WebResource resource = getResourceFactory().getApiResource(
 				"/notification/inbox/new/count");
 
@@ -46,7 +46,7 @@ public class NotificationAPI extends BaseAPI {
 	 * @param notificationId
 	 *            The id of the notification
 	 */
-	public void markAsViewed(int notificationId) {
+	public void markAsViewed(long notificationId) {
 		getResourceFactory()
 				.getApiResource("/notification/" + notificationId + "/viewed")
 				.entity(new Empty(), MediaType.APPLICATION_JSON_TYPE).post();

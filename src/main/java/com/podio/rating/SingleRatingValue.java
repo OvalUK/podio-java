@@ -4,7 +4,7 @@ public class SingleRatingValue {
 
 	private int value;
 
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 

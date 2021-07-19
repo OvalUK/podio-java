@@ -18,7 +18,7 @@ public class SpaceTopMemberGroup {
 		this.profiles = profiles;
 	}
 
-	public int getLeft() {
+	public long getLeft() {
 		return left;
 	}
 

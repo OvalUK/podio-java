@@ -39,7 +39,7 @@ public class OrgAPI extends BaseAPI {
 	 * @param data
 	 *            The new data
 	 */
-	public void updateOrganization(int orgId, OrganizationCreate data) {
+	public void updateOrganization(long orgId, OrganizationCreate data) {
 		getResourceFactory().getApiResource("/org/" + orgId)
 				.entity(data, MediaType.APPLICATION_JSON_TYPE).put();
 	}
@@ -51,7 +51,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the organization
 	 * @return The organization
 	 */
-	public Organization getOrganization(int orgId) {
+	public Organization getOrganization(long orgId) {
 		return getResourceFactory().getApiResource("/org/" + orgId).get(
 				Organization.class);
 	}
@@ -88,7 +88,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the user
 	 * @return The organizations with spaces that are shared with the user
 	 */
-	public List<OrganizationWithSpaces> getSharedOrganizations(int userId) {
+	public List<OrganizationWithSpaces> getSharedOrganizations(long userId) {
 		return getResourceFactory().getApiResource("/org/shared/" + userId)
 				.get(new GenericType<List<OrganizationWithSpaces>>() {
 				});
@@ -106,7 +106,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The url fragment for the space
 	 * @return The matching space
 	 */
-	public Space getSpaceByURL(int orgId, String url) {
+	public Space getSpaceByURL(long orgId, String url) {
 		return getResourceFactory().getApiResource(
 				"/org/" + orgId + "/space/url/" + url).get(Space.class);
 	}
@@ -118,7 +118,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the organization
 	 * @return The spaces in the organization
 	 */
-	public List<Space> getSpaces(int orgId) {
+	public List<Space> getSpaces(long orgId) {
 		return getResourceFactory().getApiResource("/org/" + orgId + "/space/")
 				.get(new GenericType<List<Space>>() {
 				});
@@ -134,7 +134,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the organization
 	 * @return The list of members on the organization with detailed information
 	 */
-	public List<OrganizationMember> getMembers(int orgId) {
+	public List<OrganizationMember> getMembers(long orgId) {
 		return getResourceFactory()
 				.getApiResource("/org/" + orgId + "/member/").get(
 						new GenericType<List<OrganizationMember>>() {
@@ -155,7 +155,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The number of results to return (max 500)
 	 * @return The list of members on the organization with detailed information
 	 */
-	public List<OrganizationMember> getMembers(int orgId, int offset, int limit) {
+	public List<OrganizationMember> getMembers(long orgId, int offset, int limit) {
 		return getResourceFactory()
 				.getApiResource("/org/" + orgId + "/member/")
 				.queryParam("offset", new Integer(offset).toString())
@@ -175,7 +175,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The parameters for get organization members
 	 * @return The list of members on the organization with detailed information
 	 */
-	public List<OrganizationMember> getMembers(int orgId, MultivaluedMap<String, String> options) {
+	public List<OrganizationMember> getMembers(long orgId, MultivaluedMap<String, String> options) {
 		return getResourceFactory()
 				.getApiResource("/org/" + orgId + "/member/")
 				.queryParams(options)
@@ -191,7 +191,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the user
 	 * @return The details of the users membership of the organization
 	 */
-	public OrganizationMember getMember(int orgId, int userId) {
+	public OrganizationMember getMember(long orgId, long userId) {
 		return getResourceFactory().getApiResource(
 				"/org/" + orgId + "/member/" + userId).get(
 				OrganizationMember.class);
@@ -206,7 +206,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The mail of the users account
 	 * @return The details of the users membership of the organization
 	 */
-	public OrganizationMember getMemberByMail(int orgId, String mail) {
+	public OrganizationMember getMemberByMail(long orgId, String mail) {
 		return getResourceFactory().getApiResource(
 				"/org/" + orgId + "/member/mail/" + mail).get(
 				OrganizationMember.class);
@@ -221,7 +221,7 @@ public class OrgAPI extends BaseAPI {
 	 *            The id of the user
 	 * @return The information about the users workspace memberships in the org
 	 */
-	public EndMemberInfo getEndMemberInfo(int orgId, int userId) {
+	public EndMemberInfo getEndMemberInfo(long orgId, long userId) {
 		return getResourceFactory().getApiResource(
 				"/org/" + orgId + "/member/" + userId + "/end_member_info").get(
 						EndMemberInfo.class);		
@@ -238,7 +238,7 @@ public class OrgAPI extends BaseAPI {
 	 * @param userId
 	 *            The id of the user
 	 */
-	public void endMember(int orgId, int userId) {
+	public void endMember(long orgId, long userId) {
 		getResourceFactory().getApiResource(
 				"/org/" + orgId + "/member/" + userId).delete();
 	}

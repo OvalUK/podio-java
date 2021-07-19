@@ -11,23 +11,23 @@ public class ItemRevision extends CreatedBase {
 	/**
 	 * The revision number
 	 */
-	private int revision;
+	private long revision;
 
 	/**
 	 * The revision of the app at the time this item revision was made
 	 */
 	private int appRevision;
 
-	public int getRevision() {
+	public long getRevision() {
 		return revision;
 	}
 
-	public void setRevision(int revision) {
+	public void setRevision(long revision) {
 		this.revision = revision;
 	}
 
 	@JsonProperty("app_revision")
-	public int getAppRevision() {
+	public long getAppRevision() {
 		return appRevision;
 	}
 

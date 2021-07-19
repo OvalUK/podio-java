@@ -20,7 +20,7 @@ public class OrganizationContactTotal {
 		this.org = org;
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

@@ -2,9 +2,9 @@ package com.podio.filter;
 
 public class FieldSortBy implements SortBy {
 
-	private final int fieldId;
+	private final long fieldId;
 
-	public FieldSortBy(int fieldId) {
+	public FieldSortBy(long fieldId) {
 		super();
 		this.fieldId = fieldId;
 	}

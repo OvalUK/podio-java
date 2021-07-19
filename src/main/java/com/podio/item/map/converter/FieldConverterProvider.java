@@ -5,7 +5,7 @@ import java.lang.reflect.AnnotatedElement;
 import com.podio.app.ApplicationField;
 import com.podio.app.ApplicationFieldType;
 
-public interface FieldConverterProvider {
+public longerface FieldConverterProvider {
 
 	boolean isSupported(ApplicationFieldType fieldType);
 

@@ -16,7 +16,7 @@ public class ItemUpdate {
 	/**
 	 * The internal revision from podio.
 	 */
-	private int revision;
+	private long revision;
 
 	/**
 	 * The values for each field
@@ -44,12 +44,12 @@ public class ItemUpdate {
 	}
 	
 	@JsonProperty("revision")
-	public int getRevision() {
+	public long getRevision() {
 		return revision;
 	}
 
 	@JsonProperty("revision")
-	public void setRevision(int revision) {
+	public void setRevision(long revision) {
 		this.revision = revision;
 	}
 

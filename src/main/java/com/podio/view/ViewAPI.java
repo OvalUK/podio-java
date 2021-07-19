@@ -18,7 +18,7 @@ public class ViewAPI extends BaseAPI{
 	 * 			the id of the app
 	 * @return The list of views of the given app
 	 */
-	public List<View> getViews(int appId) {
+	public List<View> getViews(long appId) {
 		return getResourceFactory().getApiResource("/view/app/" + appId ).get(
 				new GenericType<List<View>>() {
 				});

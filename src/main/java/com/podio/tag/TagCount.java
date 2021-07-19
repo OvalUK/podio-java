@@ -14,7 +14,7 @@ public class TagCount {
 		this.text = text;
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

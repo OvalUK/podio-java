@@ -35,7 +35,7 @@ public class SearchAPI extends BaseAPI {
          *            The list of fields to search in. Can f.ex. be used to limit the search to the "title" field.
 	 * @return All items
 	 */
-	public SearchInAppResponse searchInApp(int appId, String query, Boolean counts, 
+	public SearchInAppResponse searchInApp(long appId, String query, Boolean counts, 
                 Boolean highlights, Integer limit, Integer offset, ReferenceTypeSearchInApp refType,
                 String searchFields) {
                 WebResource resource = getResourceFactory().getApiResource("/search/app/" + appId + "/v2");

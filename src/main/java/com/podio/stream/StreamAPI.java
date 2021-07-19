@@ -109,7 +109,7 @@ public class StreamAPI extends BaseAPI {
 	 *            to no limit
 	 * @return The list of stream objects
 	 */
-	public List<StreamObject> getOrganizationStream(int orgId, Integer limit,
+	public List<StreamObject> getOrganizationStream(long orgId, Integer limit,
 			Integer offset, DateTime dateFrom, DateTime dateTo) {
 		return getStream("/stream/org/" + orgId + "/", limit, offset, dateFrom,
 				dateTo);
@@ -131,7 +131,7 @@ public class StreamAPI extends BaseAPI {
 	 *            to no limit
 	 * @return The list of stream objects
 	 */
-	public List<StreamObjectV2> getOrganizationStreamV2(int orgId,
+	public List<StreamObjectV2> getOrganizationStreamV2(long orgId,
 			Integer limit, Integer offset, DateTime dateFrom, DateTime dateTo) {
 		return getStreamV2("/stream/org/" + orgId + "/v2/", limit, offset,
 				dateFrom, dateTo);
@@ -153,7 +153,7 @@ public class StreamAPI extends BaseAPI {
 	 *            to no limit
 	 * @return The list of stream objects
 	 */
-	public List<StreamObject> getSpaceStream(int spaceId, Integer limit,
+	public List<StreamObject> getSpaceStream(long spaceId, Integer limit,
 			Integer offset, DateTime dateFrom, DateTime dateTo) {
 		return getStream("/stream/space/" + spaceId + "/", limit, offset,
 				dateFrom, dateTo);
@@ -175,7 +175,7 @@ public class StreamAPI extends BaseAPI {
 	 *            to no limit
 	 * @return The list of stream objects
 	 */
-	public List<StreamObjectV2> getSpaceStreamV2(int spaceId, Integer limit,
+	public List<StreamObjectV2> getSpaceStreamV2(long spaceId, Integer limit,
 			Integer offset, DateTime dateFrom, DateTime dateTo) {
 		return getStreamV2("/stream/space/" + spaceId + "/v2/", limit, offset,
 				dateFrom, dateTo);
@@ -197,7 +197,7 @@ public class StreamAPI extends BaseAPI {
 	 *            to no limit
 	 * @return The list of stream objects
 	 */
-	public List<StreamObjectV2> getAppStream(int appId, Integer limit,
+	public List<StreamObjectV2> getAppStream(long appId, Integer limit,
 			Integer offset) {
 		return getStreamV2("/stream/app/" + appId + "/", limit, offset, null,
 				null);

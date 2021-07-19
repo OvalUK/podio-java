@@ -37,7 +37,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The id of the space
 	 * @return The space with the given id
 	 */
-	public Space getSpace(int spaceId) {
+	public Space getSpace(long spaceId) {
 		return getResourceFactory().getApiResource("/space/" + spaceId).get(
 				Space.class);
 	}
@@ -50,7 +50,7 @@ public class SpaceAPI extends BaseAPI {
 	 * @param data
 	 *            The updated data of the space
 	 */
-	public void updateSpace(int spaceId, SpaceUpdate data) {
+	public void updateSpace(long spaceId, SpaceUpdate data) {
 		getResourceFactory().getApiResource("/space/" + spaceId)
 				.entity(data, MediaType.APPLICATION_JSON_TYPE).put();
 	}
@@ -75,7 +75,7 @@ public class SpaceAPI extends BaseAPI {
 	 * @param spaceMemberAdd
 	 *            Information about the user(s) to add
 	 */
-	public void addSpaceMembers(int spaceId, SpaceMemberAdd spaceMemberAdd) {
+	public void addSpaceMembers(long spaceId, SpaceMemberAdd spaceMemberAdd) {
 		getResourceFactory()
 				.getApiResource("/space/" + spaceId + "/member/")
 				.entity(spaceMemberAdd,	MediaType.APPLICATION_JSON_TYPE)
@@ -91,7 +91,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The ud of the user
 	 * @return The details about the space membership
 	 */
-	public SpaceMember getSpaceMembership(int spaceId, int userId) {
+	public SpaceMember getSpaceMembership(long spaceId, long userId) {
 		return getResourceFactory().getApiResource(
 				"/space/" + spaceId + "/member/" + userId).get(
 				SpaceMember.class);
@@ -107,7 +107,7 @@ public class SpaceAPI extends BaseAPI {
 	 * @param role
 	 *            The new role for the membership
 	 */
-	public void updateSpaceMembership(int spaceId, int userId, Role role) {
+	public void updateSpaceMembership(long spaceId, long userId, Role role) {
 		getResourceFactory()
 				.getApiResource("/space/" + spaceId + "/member/" + userId)
 				.entity(new SpaceMemberUpdate(role),
@@ -123,7 +123,7 @@ public class SpaceAPI extends BaseAPI {
 	 * @param userId
 	 *            The id of the user
 	 */
-	public void endSpaceMembership(int spaceId, int userId) {
+	public void endSpaceMembership(long spaceId, long userId) {
 		getResourceFactory().getApiResource(
 				"/space/" + spaceId + "/member/" + userId).delete();
 	}
@@ -135,7 +135,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The id of the space
 	 * @return The active members of the space
 	 */
-	public List<SpaceMember> getActiveMembers(int spaceId) {
+	public List<SpaceMember> getActiveMembers(long spaceId) {
 		return getResourceFactory().getApiResource(
 				"/space/" + spaceId + "/member/").get(
 				new GenericType<List<SpaceMember>>() {
@@ -153,7 +153,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The number of results to return (max 500)
 	 * @return The active members of the space
 	 */
-	public List<SpaceMemberV2> getActiveMembersV2(int spaceId, int offset, int limit) {
+	public List<SpaceMemberV2> getActiveMembersV2(long spaceId, int offset, int limit) {
 		return getResourceFactory()
 		           .getApiResource("/space/" + spaceId + "/member/v2/")
 		           .queryParam("offset", new Integer(offset).toString())
@@ -170,7 +170,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The parameters for get space members v2 
 	 * @return The active members of the space
 	 */
-	public List<SpaceMemberV2> getActiveMembersV2(int spaceId, MultivaluedMap<String, String> options) {
+	public List<SpaceMemberV2> getActiveMembersV2(long spaceId, MultivaluedMap<String, String> options) {
 		return getResourceFactory()
 		           .getApiResource("/space/" + spaceId + "/member/v2/")
 		           .queryParams(options)
@@ -184,7 +184,7 @@ public class SpaceAPI extends BaseAPI {
 	 *            The id of the space
 	 * @return The active members of the space
 	 */
-	public List<SpaceMember> getEndedMembers(int spaceId) {
+	public List<SpaceMember> getEndedMembers(long spaceId) {
 		return getResourceFactory().getApiResource(
 				"/space/" + spaceId + "/member/ended/").get(
 				new GenericType<List<SpaceMember>>() {

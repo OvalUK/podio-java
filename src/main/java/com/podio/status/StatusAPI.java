@@ -29,7 +29,7 @@ public class StatusAPI extends BaseAPI {
 	 *            The data for the new status message
 	 * @return The id of the newly created status message
 	 */
-	public int createStatus(int spaceId, StatusCreate status) {
+	public long createStatus(long spaceId, StatusCreate status) {
 		return getResourceFactory()
 				.getApiResource("/status/space/" + spaceId + "/")
 				.entity(status, MediaType.APPLICATION_JSON_TYPE)
@@ -44,7 +44,7 @@ public class StatusAPI extends BaseAPI {
 	 * @param statusId
 	 *            The id of the status to delete
 	 */
-	public void deleteStatus(int statusId) {
+	public void deleteStatus(long statusId) {
 		getResourceFactory().getApiResource("/status/" + statusId).delete();
 	}
 
@@ -56,7 +56,7 @@ public class StatusAPI extends BaseAPI {
 	 *            The id of the status
 	 * @return The status message
 	 */
-	public StatusFull getStatus(int statusId) {
+	public StatusFull getStatus(long statusId) {
 		return getResourceFactory().getApiResource("/status/" + statusId).get(
 				StatusFull.class);
 	}
@@ -70,7 +70,7 @@ public class StatusAPI extends BaseAPI {
 	 * @param update
 	 *            The new data for the status
 	 */
-	public void updateStatus(int statusId, StatusUpdate update) {
+	public void updateStatus(long statusId, StatusUpdate update) {
 		getResourceFactory().getApiResource("/status/" + statusId)
 				.entity(update, MediaType.APPLICATION_JSON_TYPE).put();
 	}

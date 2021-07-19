@@ -16,7 +16,7 @@ public class SpaceContactTotal {
 		this.space = space;
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

@@ -34,7 +34,7 @@ public class Rating {
 		this.type = type;
 	}
 
-	public int getValue() {
+	public long getValue() {
 		return value;
 	}
 

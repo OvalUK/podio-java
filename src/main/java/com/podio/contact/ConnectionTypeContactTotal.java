@@ -20,7 +20,7 @@ public class ConnectionTypeContactTotal {
 		this.type = type;
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

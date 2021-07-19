@@ -31,7 +31,7 @@ public final class OAuthToken {
 	}
 
 	@JsonProperty("expires_in")
-	public int getExpiresIn() {
+	public long getExpiresIn() {
 		return expiresIn;
 	}
 

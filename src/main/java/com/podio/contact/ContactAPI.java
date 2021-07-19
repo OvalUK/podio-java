@@ -37,7 +37,7 @@ public class ContactAPI extends BaseAPI {
 	 *            True if the create should be silent, false otherwise
 	 * @return The id of the newly created contact
 	 */
-	public int addSpaceContact(int spaceId, ContactCreate create, boolean silent) {
+	public long addSpaceContact(long spaceId, ContactCreate create, boolean silent) {
 		return getResourceFactory().getApiResource("/contact/space/" + spaceId + "/")
 				.queryParam("silent", silent ? "1" : "0")
 				.entity(create, MediaType.APPLICATION_JSON_TYPE)
@@ -58,7 +58,7 @@ public class ContactAPI extends BaseAPI {
 	 * @param hook
 	 *            True if hooks should be executed for the change, false otherwise
 	 */
-	public void updateSpaceContact(int profileId, ContactUpdate update, boolean silent, boolean hook) {
+	public void updateSpaceContact(long profileId, ContactUpdate update, boolean silent, boolean hook) {
 		getResourceFactory().getApiResource("/contact/" + profileId)
 				.queryParam("silent", silent ? "1" : "0")
 				.queryParam("hook", hook ? "1" : "0")
@@ -73,7 +73,7 @@ public class ContactAPI extends BaseAPI {
          * @param silent
 	 *            True if the deletion should be silent, false otherwise
 	 */
-	public void deleteSpaceContact(int profileId, boolean silent) {
+	public void deleteSpaceContact(long profileId, boolean silent) {
 		getResourceFactory().getApiResource("/contact/" + profileId)
                         .queryParam("silent", silent ? "1" : "0")
                         .delete();
@@ -86,7 +86,7 @@ public class ContactAPI extends BaseAPI {
 	 *            The profile id of the user
 	 * @return The contact profile
 	 */
-	public Profile getContact(int profileId) {
+	public Profile getContact(long profileId) {
 		return getResourceFactory().getApiResource("/contact/" + profileId + "/v2").get(
 				Profile.class);
 	}
@@ -100,7 +100,7 @@ public class ContactAPI extends BaseAPI {
 	 *            The field for which data should be returned
 	 * @return The list of values for the given field
 	 */
-	public <T, R> List<T> getContactField(int userId, ProfileField<T, R> field) {
+	public <T, R> List<T> getContactField(long userId, ProfileField<T, R> field) {
 		List<R> values = getResourceFactory().getApiResource(
 				"/contact/" + userId + "/" + field.getName())
 
@@ -175,7 +175,7 @@ public class ContactAPI extends BaseAPI {
          *            The type of contacts to be returned
 	 * @return The list of contacts
 	 */
-	public <T, F, R> List<T> getOrganizationContacts(int organizationId,
+	public <T, F, R> List<T> getOrganizationContacts(long organizationId,
 			ProfileField<F, R> key, F value, Integer limit, Integer offset,
 			ProfileType<T> type, ContactOrder order, ContactType contactType) {
 		WebResource resource = getResourceFactory().getApiResource(
@@ -206,7 +206,7 @@ public class ContactAPI extends BaseAPI {
          *            The type of contacts to be returned
 	 * @return The list of contacts
 	 */
-	public <T, F, R> List<T> getSpaceContacts(int spaceId,
+	public <T, F, R> List<T> getSpaceContacts(long spaceId,
 			ProfileField<F, R> key, F value, Integer limit, Integer offset,
 			ProfileType<T> type, ContactOrder order, ContactType contactType) {
 		WebResource resource = getResourceFactory().getApiResource(
@@ -224,7 +224,7 @@ public class ContactAPI extends BaseAPI {
          *            returned from
          * @return The total number of space contacts
          */
-        public SpaceContactTotals getSpaceContactTotals(int spaceId) {
+        public SpaceContactTotals getSpaceContactTotals(long spaceId) {
                 return getResourceFactory().getApiResource(
                         "/contact/space/" + spaceId + "/totals/space/").get(
                         SpaceContactTotals.class);

@@ -2,7 +2,7 @@ package com.podio.filter;
 
 public class NumberFieldFilterBy extends FieldFilterBy<NumberInterval> {
 
-	public NumberFieldFilterBy(int fieldId) {
+	public NumberFieldFilterBy(long fieldId) {
 		super(fieldId);
 	}
 

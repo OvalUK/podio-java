@@ -35,7 +35,7 @@ public class Organization extends OrganizationMini {
 		this.status = status;
 	}
 
-	public int getUserLimit() {
+	public long getUserLimit() {
 		return userLimit;
 	}
 

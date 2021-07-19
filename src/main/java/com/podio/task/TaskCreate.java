@@ -75,7 +75,7 @@ public class TaskCreate {
 		this.dueDate = dueDate;
 	}
 
-	public int getResponsible() {
+	public long getResponsible() {
 		return responsible;
 	}
 

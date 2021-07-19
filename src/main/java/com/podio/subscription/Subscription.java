@@ -31,7 +31,7 @@ public class Subscription {
 		this.startedOn = startedOn;
 	}
 
-	public int getNotifications() {
+	public long getNotifications() {
 		return notifications;
 	}
 

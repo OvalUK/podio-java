@@ -60,7 +60,7 @@ public class TaskAPI extends BaseAPI {
 	 *            The id of the task to retrieve
 	 * @return The retrieved task
 	 */
-	public Task getTask(int taskId) {
+	public Task getTask(long taskId) {
 		return getResourceFactory().getApiResource("/task/" + taskId).get(
 				Task.class);
 	}
@@ -74,7 +74,7 @@ public class TaskAPI extends BaseAPI {
 	 * @param responsible
 	 *            The id of the user the task should be assigned to
 	 */
-	public void assignTask(int taskId, int responsible) {
+	public void assignTask(long taskId, int responsible) {
 		getResourceFactory()
 				.getApiResource("/task/" + taskId + "/assign")
 				.entity(new AssignValue(responsible),
@@ -87,7 +87,7 @@ public class TaskAPI extends BaseAPI {
 	 * @param taskId
 	 *            The id of the task to nark as complete
 	 */
-	public void completeTask(int taskId) {
+	public void completeTask(long taskId) {
 		getResourceFactory().getApiResource("/task/" + taskId + "/complete")
 				.entity(new Empty(), MediaType.APPLICATION_JSON_TYPE).post();
 	}
@@ -98,7 +98,7 @@ public class TaskAPI extends BaseAPI {
 	 * @param taskId
 	 *            The id of the task to mark as incomplete
 	 */
-	public void incompleteTask(int taskId) {
+	public void incompleteTask(long taskId) {
 		getResourceFactory().getApiResource("/task/" + taskId + "/incomplete")
 				.entity(new Empty(), MediaType.APPLICATION_JSON_TYPE).post();
 	}
@@ -111,7 +111,7 @@ public class TaskAPI extends BaseAPI {
 	 * @param dueDate
 	 *            The new due date of the task
 	 */
-	public void updateDueDate(int taskId, LocalDate dueDate) {
+	public void updateDueDate(long taskId, LocalDate dueDate) {
 		getResourceFactory()
 				.getApiResource("/task/" + taskId + "/due_date")
 				.entity(new TaskDueDate(dueDate),
@@ -127,7 +127,7 @@ public class TaskAPI extends BaseAPI {
 	 *            <code>true</code> if the task should be private,
 	 *            <code>false</code> otherwise
 	 */
-	public void updatePrivate(int taskId, boolean priv) {
+	public void updatePrivate(long taskId, boolean priv) {
 		getResourceFactory().getApiResource("/task/" + taskId + "/private")
 				.entity(new TaskPrivate(priv), MediaType.APPLICATION_JSON_TYPE)
 				.put();
@@ -141,7 +141,7 @@ public class TaskAPI extends BaseAPI {
 	 * @param text
 	 *            The new text of the task
 	 */
-	public void updateText(int taskId, String text) {
+	public void updateText(long taskId, String text) {
 		getResourceFactory().getApiResource("/task/" + taskId + "/text")
 				.entity(new TaskText(text), MediaType.APPLICATION_JSON_TYPE)
 				.put();
@@ -156,7 +156,7 @@ public class TaskAPI extends BaseAPI {
 	 *            Disable notifications
 	 * @return The id of the newly created task
 	 */
-	public int createTask(TaskCreate task, boolean silent) {
+	public long createTask(TaskCreate task, boolean silent) {
 		return createTask(task, silent, true);
 	}
 	
@@ -171,7 +171,7 @@ public class TaskAPI extends BaseAPI {
 	 *            Execute hooks for the change
 	 * @return The id of the newly created task
 	 */
-	public int createTask(TaskCreate task, boolean silent, boolean hook) {
+	public long createTask(TaskCreate task, boolean silent, boolean hook) {
 		TaskCreateResponse response = getResourceFactory()
 				.getApiResource("/task/")
 				.queryParam("silent", silent ? "1" : "0")
@@ -193,7 +193,7 @@ public class TaskAPI extends BaseAPI {
 	 *            Disable notifications
 	 * @return The id of the newly created task
 	 */
-	public int createTaskWithReference(TaskCreate task, Reference reference,
+	public long createTaskWithReference(TaskCreate task, Reference reference,
 			boolean silent) {
 		return createTaskWithReference(task, reference, silent, true);
 	}
@@ -211,7 +211,7 @@ public class TaskAPI extends BaseAPI {
 	 *            Execute hooks for the change
 	 * @return The id of the newly created task
 	 */
-	public int createTaskWithReference(TaskCreate task, Reference reference,
+	public long createTaskWithReference(TaskCreate task, Reference reference,
 			boolean silent, boolean hook) {
 		return getResourceFactory()
 				.getApiResource(

@@ -29,7 +29,7 @@ public class ConversationAPI extends BaseAPI {
 	 *            sender)
 	 * @return The id of the newly created conversation
 	 */
-	public int createConversation(String subject, String text,
+	public long createConversation(String subject, String text,
 			List<Integer> participants) {
 		return createConversation(subject, text, participants, null);
 	}
@@ -49,7 +49,7 @@ public class ConversationAPI extends BaseAPI {
 	 *            The object the conversation should be created on, if any
 	 * @return The id of the newly created conversation
 	 */
-	public int createConversation(String subject, String text,
+	public long createConversation(String subject, String text,
 			List<Integer> participants, Reference reference) {
 		WebResource resource;
 		if (reference != null) {
@@ -74,7 +74,7 @@ public class ConversationAPI extends BaseAPI {
 	 *            The id of the conversation to get
 	 * @return The conversation requested
 	 */
-	public Conversation getConversation(int conversationId) {
+	public Conversation getConversation(long conversationId) {
 		return getResourceFactory().getApiResource(
 				"/conversation/" + conversationId).get(Conversation.class);
 	}
@@ -103,7 +103,7 @@ public class ConversationAPI extends BaseAPI {
 	 *            The text of the reply
 	 * @return The id of the new message
 	 */
-	public int addReply(int conversationId, String text) {
+	public long addReply(long conversationId, String text) {
 		return getResourceFactory()
 				.getApiResource("/conversation/" + conversationId + "/reply")
 				.entity(new MessageCreate(text),

@@ -18,7 +18,7 @@ public class ValueRatings implements Serializable {
 		return "ValueRatings [total=" + total + ", users=" + users + "]";
 	}
 
-	public int getTotal() {
+	public long getTotal() {
 		return total;
 	}
 

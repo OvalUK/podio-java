@@ -11,7 +11,7 @@ public class FileError {
 		return "FileError [code=" + code + ", message=" + message + "]";
 	}
 
-	public int getCode() {
+	public long getCode() {
 		return code;
 	}
 

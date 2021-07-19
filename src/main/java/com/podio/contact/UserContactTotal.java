@@ -16,7 +16,7 @@ public class UserContactTotal {
 		this.organizations = organizations;
 	}
 
-	public int getCount() {
+	public long getCount() {
 		return count;
 	}
 

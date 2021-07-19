@@ -4,11 +4,11 @@ import javax.ws.rs.core.MultivaluedMap;
 
 public class OAuthAppCredentials implements OAuthUserCredentials {
 
-	private final int appId;
+	private final long appId;
 
 	private final String appToken;
 
-	public OAuthAppCredentials(int appId, String appToken) {
+	public OAuthAppCredentials(long appId, String appToken) {
 		super();
 		this.appId = appId;
 		this.appToken = appToken;

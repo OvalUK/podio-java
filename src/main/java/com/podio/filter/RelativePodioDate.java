@@ -32,7 +32,7 @@ public class RelativePodioDate implements PodioDate {
 		this.round = round;
 	}
 
-	public int getOffset() {
+	public long getOffset() {
 		return offset;
 	}
 

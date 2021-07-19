@@ -47,7 +47,7 @@ public class CommentAPI extends BaseAPI {
 	 *            The id of the comment
 	 * @return The comment
 	 */
-	public Comment getComment(int commentId) {
+	public Comment getComment(long commentId) {
 		return getResourceFactory().getApiResource("/comment/" + commentId)
 				.get(Comment.class);
 	}
@@ -62,7 +62,7 @@ public class CommentAPI extends BaseAPI {
 	 * @param silent
 	 *            True if the update should be silent, false otherwise
 	 */
-	public int addComment(Reference reference, CommentCreate comment,
+	public long addComment(Reference reference, CommentCreate comment,
 			boolean silent, boolean hook) {
 		return getResourceFactory()
 				.getApiResource(
@@ -83,7 +83,7 @@ public class CommentAPI extends BaseAPI {
 	 * @param comment
 	 *            The updated comment definition
 	 */
-	public void updateComment(int commentId, CommentUpdate comment) {
+	public void updateComment(long commentId, CommentUpdate comment) {
 		getResourceFactory().getApiResource("/comment/" + commentId)
 				.entity(comment, MediaType.APPLICATION_JSON_TYPE).put();
 	}
@@ -95,7 +95,7 @@ public class CommentAPI extends BaseAPI {
 	 * @param commentId
 	 *            The id of the comment
 	 */
-	public void deleteComment(int commentId) {
+	public void deleteComment(long commentId) {
 		getResourceFactory().getApiResource("/comment/" + commentId).delete();
 	}
 }

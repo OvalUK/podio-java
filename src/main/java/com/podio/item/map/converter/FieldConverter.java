@@ -2,7 +2,7 @@ package com.podio.item.map.converter;
 
 import java.util.Map;
 
-public interface FieldConverter {
+public longerface FieldConverter {
 
 	Map<String, ?> fromModel(Object value);
 

@@ -38,7 +38,7 @@ public class RatingAPI extends BaseAPI {
 	 * 
 	 * @see RatingValue
 	 */
-	public int createRating(Reference reference, RatingType type, int value) {
+	public long createRating(Reference reference, RatingType type, int value) {
 		return getResourceFactory()
 				.getApiResource("/rating/" + reference.toURLFragment() + type)
 				.entity(Collections.singletonMap("value", value),
@@ -66,7 +66,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object that should be liked
 	 * @return The id of the newly created rating
 	 */
-	public int like(Reference reference) {
+	public long like(Reference reference) {
 		return createRating(reference, RatingType.LIKE, RatingValue.LIKE);
 	}
 
@@ -77,7 +77,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int yes(Reference reference) {
+	public long yes(Reference reference) {
 		return createRating(reference, RatingType.YESNO, RatingValue.YESNO_YES);
 	}
 
@@ -88,7 +88,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int no(Reference reference) {
+	public long no(Reference reference) {
 		return createRating(reference, RatingType.YESNO, RatingValue.YESNO_NO);
 	}
 
@@ -99,7 +99,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int approves(Reference reference) {
+	public long approves(Reference reference) {
 		return createRating(reference, RatingType.APPROVED,
 				RatingValue.APPROVED_APPROVES);
 	}
@@ -111,7 +111,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int disapproves(Reference reference) {
+	public long disapproves(Reference reference) {
 		return createRating(reference, RatingType.APPROVED,
 				RatingValue.APPROVED_DISAPPROVES);
 	}
@@ -125,7 +125,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The number of stars to give, between 1 and 5
 	 * @return The id of the newly created rating
 	 */
-	public int fivestar(Reference reference, int stars) {
+	public long fivestar(Reference reference, int stars) {
 		return createRating(reference, RatingType.FIVESTAR, stars);
 	}
 
@@ -136,7 +136,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int attend(Reference reference) {
+	public long attend(Reference reference) {
 		return createRating(reference, RatingType.RSVP, RatingValue.RSVP_ATTEND);
 	}
 
@@ -147,7 +147,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int maybeAttend(Reference reference) {
+	public long maybeAttend(Reference reference) {
 		return createRating(reference, RatingType.RSVP,
 				RatingValue.RSVP_MAYBE_ATTEND);
 	}
@@ -159,7 +159,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int notAttend(Reference reference) {
+	public long notAttend(Reference reference) {
 		return createRating(reference, RatingType.RSVP,
 				RatingValue.RSVP_NOT_ATTEND);
 	}
@@ -171,7 +171,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int thumbsUp(Reference reference) {
+	public long thumbsUp(Reference reference) {
 		return createRating(reference, RatingType.THUMBS, RatingValue.THUMBS_UP);
 	}
 
@@ -182,7 +182,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The reference to the object
 	 * @return The id of the newly created rating
 	 */
-	public int thumbsDown(Reference reference) {
+	public long thumbsDown(Reference reference) {
 		return createRating(reference, RatingType.THUMBS,
 				RatingValue.THUMBS_DOWN);
 	}
@@ -228,7 +228,7 @@ public class RatingAPI extends BaseAPI {
 	 *            The id of the user for which to return the rating for
 	 * @return The value of the rating
 	 */
-	public int getRating(Reference reference, RatingType type, int userId) {
+	public long getRating(Reference reference, RatingType type, long userId) {
 		return getResourceFactory()
 				.getApiResource(
 						"/rating/" + reference.toURLFragment() + type + "/"
