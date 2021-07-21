@@ -88,7 +88,7 @@ public class UserAPITest {
 		Assert.assertEquals(user.getTimezone().getID(), "Europe/Copenhagen");
 
 		Profile profile = status.getProfile();
-		Assert.assertEquals(profile.getUserId().intValue(), 1);
+		Assert.assertEquals(profile.getUserId().longValue(), 1);
 		Assert.assertEquals(profile.getName(), "Christian Holm");
 		Assert.assertEquals(profile.getImage().getThumbnailLink(), "https://d1izh0afz5ebv1.cloudfront.net/public/9");
 

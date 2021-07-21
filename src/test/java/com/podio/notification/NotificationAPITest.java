@@ -13,7 +13,7 @@ public class NotificationAPITest {
 
 	@Test
 	public void getInboxNewCount() {
-		int count = getAPI().getInboxNewCount();
+		long count = getAPI().getInboxNewCount();
 
 		Assert.assertEquals(count, 59);
 	}

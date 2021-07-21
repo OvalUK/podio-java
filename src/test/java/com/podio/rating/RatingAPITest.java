@@ -15,7 +15,7 @@ public class RatingAPITest {
 
 	@Test
 	public void createRating() {
-		int ratingId = getAPI().createRating(
+		long ratingId = getAPI().createRating(
 				new Reference(ReferenceType.STATUS, 1), RatingType.LIKE,
 				RatingValue.LIKE);
 
@@ -30,7 +30,7 @@ public class RatingAPITest {
 		Assert.assertEquals(ratings.get(RatingType.LIKE).getCounts(1)
 				.getTotal(), 1);
 		Assert.assertEquals(ratings.get(RatingType.LIKE).getCounts(1)
-				.getUsers().get(0).getUserId().intValue(), 4);
+				.getUsers().get(0).getUserId().longValue(), 4);
 	}
 
 	@Test
@@ -43,7 +43,7 @@ public class RatingAPITest {
 
 	@Test
 	public void getRating() {
-		int value = getAPI().getRating(new Reference(ReferenceType.STATUS, 1),
+		long value = getAPI().getRating(new Reference(ReferenceType.STATUS, 1),
 				RatingType.LIKE, 4);
 
 		Assert.assertEquals(value, 1);

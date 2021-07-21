@@ -9,11 +9,11 @@ public final class APIFactoryProvider {
 		return new APIFactory(ResourceFactoryProvider.getDefault());
 	}
 
-	public static APIFactory get(int userId) {
+	public static APIFactory get(long userId) {
 		return new APIFactory(ResourceFactoryProvider.getUser(userId));
 	}
 
-	public static APIFactory getApp(int appId) {
+	public static APIFactory getApp(long appId) {
 		return new APIFactory(ResourceFactoryProvider.getApp(appId));
 	}
 }

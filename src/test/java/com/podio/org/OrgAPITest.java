@@ -35,10 +35,10 @@ public class OrgAPITest {
 		Assert.assertEquals(org.getId(), 1);
 		Assert.assertEquals(org.getName(), "Hoist");
 		Assert.assertEquals(org.getUrl(), "https://podio.com/hoist");
-		Assert.assertEquals(org.getLogo().intValue(), 10);
+		Assert.assertEquals(org.getLogo().longValue(), 10);
 		Assert.assertEquals(org.getStatus(), OrganizationStatus.ACTIVE);
 		Assert.assertEquals(org.getUserLimit(), 50);
-		Assert.assertEquals(org.getCreatedBy().getUserId().intValue(), 1);
+		Assert.assertEquals(org.getCreatedBy().getUserId().longValue(), 1);
 		Assert.assertEquals(org.getCreatedOn(), new DateTime(2010, 8, 6, 23, 1,
 				0, 0, DateTimeZone.UTC));
 	}

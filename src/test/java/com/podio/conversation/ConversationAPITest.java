@@ -20,16 +20,16 @@ public class ConversationAPITest {
 
 	@Test
 	public void createConversation() {
-		int conversationId = getAPI().createConversation("Subject", "Message",
-				Arrays.asList(2, 4));
+		long conversationId = getAPI().createConversation("Subject", "Message",
+				Arrays.asList(2L, 4L));
 
 		Assert.assertTrue(conversationId > 1);
 	}
 
 	@Test
 	public void createConversationOnObject() {
-		int conversation_id = getAPI().createConversation("Subject", "Message",
-				Arrays.asList(2, 4), new Reference(ReferenceType.ITEM, 1));
+        long conversation_id = getAPI().createConversation("Subject", "Message",
+				Arrays.asList(2L, 4L), new Reference(ReferenceType.ITEM, 1));
 
 		Assert.assertTrue(conversation_id > 1);
 	}
@@ -43,9 +43,9 @@ public class ConversationAPITest {
 				"Isn't all these notification types annoying?");
 		Assert.assertEquals(conversation.getParticipants().size(), 2);
 		Assert.assertEquals(conversation.getParticipants().get(0).getUserId()
-				.intValue(), 1);
+				.longValue(), 1);
 		Assert.assertEquals(conversation.getParticipants().get(1).getUserId()
-				.intValue(), 2);
+				.longValue(), 2);
 	}
 
 	@Test
@@ -60,7 +60,7 @@ public class ConversationAPITest {
 
 	@Test
 	public void addReply() {
-		int messageId = getAPI().addReply(1, "My reply");
+		long messageId = getAPI().addReply(1, "My reply");
 
 		Assert.assertTrue(messageId > 1);
 	}

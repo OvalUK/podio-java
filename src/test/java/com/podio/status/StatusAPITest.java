@@ -18,11 +18,11 @@ public class StatusAPITest {
 
 	@Test
 	public void createStatus() {
-		int statusId = getAPI().createStatus(
+		long statusId = getAPI().createStatus(
 				1,
 				new StatusCreate("Hello from Java", Collections
-						.<Integer> emptyList(), Collections
-						.<Integer> emptyList()));
+						.<Long> emptyList(), Collections
+						.<Long> emptyList()));
 
 		Assert.assertTrue(statusId > 1);
 	}
@@ -46,7 +46,7 @@ public class StatusAPITest {
 		Assert.assertEquals(status.getComments().size(), 2);
 		Assert.assertEquals(
 				status.getRatings().get(RatingType.LIKE).getCounts(1)
-						.getUsers().get(0).getUserId().intValue(), 4);
+						.getUsers().get(0).getUserId().longValue(), 4);
 		Assert.assertEquals(status.getFiles().size(), 4);
 		Assert.assertEquals(status.getFiles().get(0).getId(), 34);
 		Assert.assertEquals(status.isSubscribed(), true);
@@ -56,6 +56,6 @@ public class StatusAPITest {
 	@Test
 	public void updateStatus() {
 		getAPI().updateStatus(1,
-				new StatusUpdate("Test", Collections.<Integer> emptyList()));
+				new StatusUpdate("Test", Collections.<Long> emptyList()));
 	}
 }

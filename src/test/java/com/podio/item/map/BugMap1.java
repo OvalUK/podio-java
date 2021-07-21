@@ -7,7 +7,7 @@ import org.joda.money.Money;
 
 public class BugMap1 {
 
-	private int externalId;
+	private long externalId;
 
 	private Set<HireStatus> statuses;
 
@@ -17,7 +17,7 @@ public class BugMap1 {
 
 	private BigDecimal importance;
 
-	private int howFarAreWe;
+	private long howFarAreWe;
 
 	private String ignored;
 
@@ -25,9 +25,9 @@ public class BugMap1 {
 		super();
 	}
 
-	public BugMap1(int externalId, Set<HireStatus> statuses,
+	public BugMap1(long externalId, Set<HireStatus> statuses,
 			Money alottaCash, String writeAJoke, BigDecimal importance,
-			int howFarAreWe, String ignored) {
+			long howFarAreWe, String ignored) {
 		super();
 		this.externalId = externalId;
 		this.statuses = statuses;
@@ -39,11 +39,11 @@ public class BugMap1 {
 	}
 
 	@ExternalId
-	public int getExternalId() {
+	public long getExternalId() {
 		return externalId;
 	}
 
-	public void setExternalId(int externalId) {
+	public void setExternalId(long externalId) {
 		this.externalId = externalId;
 	}
 
@@ -80,11 +80,11 @@ public class BugMap1 {
 		this.importance = importance;
 	}
 
-	public int getHowFarAreWe() {
+	public long getHowFarAreWe() {
 		return howFarAreWe;
 	}
 
-	public void setHowFarAreWe(int howFarAreWe) {
+	public void setHowFarAreWe(long howFarAreWe) {
 		this.howFarAreWe = howFarAreWe;
 	}
 

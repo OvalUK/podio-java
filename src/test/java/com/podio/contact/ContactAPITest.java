@@ -20,9 +20,9 @@ public class ContactAPITest {
 	public void getContact() {
 		Profile contact = getAPI().getContact(1);
 
-		Assert.assertEquals(contact.getUserId().intValue(), 1);
+		Assert.assertEquals(contact.getUserId().longValue(), 1);
 		Assert.assertEquals(contact.getName(), "Christian Holm");
-		Assert.assertEquals(contact.getAvatar(), new Integer(9));
+		Assert.assertEquals(contact.getAvatar(), new Long(9));
 		Assert.assertEquals(contact.getBirthdate(), new LocalDate(1978, 12, 11));
 		Assert.assertEquals(contact.getSkype(), "cho@cubitech.dk");
 		Assert.assertEquals(contact.getAbout(), "King of the API, baby!");
@@ -57,10 +57,10 @@ public class ContactAPITest {
 
 	@Test
 	public void getContactFieldAvatar() {
-		List<Integer> avatars = getAPI()
+		List<Long> avatars = getAPI()
 				.getContactField(1, ProfileField.AVATAR);
 		Assert.assertEquals(avatars.size(), 1);
-		Assert.assertEquals(avatars.get(0).intValue(), 9);
+		Assert.assertEquals(avatars.get(0).longValue(), 9);
 	}
 
 	@Test

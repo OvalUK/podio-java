@@ -30,10 +30,10 @@ public class ItemAPITest {
 
 	@Test
 	public void addItem() {
-		int itemId = getAPI().addItem(
+		long itemId = getAPI().addItem(
 				1,
 				new ItemCreate(null, Arrays.asList(new FieldValuesUpdate(1,
-						"value", "yes")), Collections.<Integer> emptyList(),
+						"value", "yes")), Collections.<Long> emptyList(),
 						Collections.<String> emptyList()), false);
 
 		Assert.assertTrue(itemId > 1);
@@ -41,7 +41,7 @@ public class ItemAPITest {
 
 	@Test
 	public void addItemAsApp() {
-		int itemId = APIFactoryProvider
+		long itemId = APIFactoryProvider
 				.getApp(1)
 				.getAPI(ItemAPI.class)
 				.addItem(
@@ -49,7 +49,7 @@ public class ItemAPITest {
 						new ItemCreate(null,
 								Arrays.asList(new FieldValuesUpdate(1, "value",
 										"yes")), Collections
-										.<Integer> emptyList(), Collections
+										.<Long> emptyList(), Collections
 										.<String> emptyList()), false);
 
 		Assert.assertTrue(itemId > 1);
@@ -125,7 +125,7 @@ public class ItemAPITest {
 		Assert.assertEquals(item.getRatings().get(RatingType.APPROVED)
 				.getCounts(1).getTotal(), 1);
 		Assert.assertEquals(item.getRatings().get(RatingType.APPROVED)
-				.getCounts(1).getUsers().get(0).getUserId().intValue(), 2);
+				.getCounts(1).getUsers().get(0).getUserId().longValue(), 2);
 		Assert.assertEquals(item.getFiles().size(), 1);
 		Assert.assertEquals(item.getFiles().get(0).getId(), 1);
 		Assert.assertEquals(item.getTags().size(), 2);
@@ -256,8 +256,8 @@ public class ItemAPITest {
 				null,
 				null,
 				null,
-				new FilterByValue<List<Integer>>(new CreatedViaFilterBy(),
-						Arrays.asList(2)));
+				new FilterByValue<List<Long>>(new CreatedViaFilterBy(),
+						Arrays.asList(2L)));
 
 		Assert.assertEquals(response.getItems().size(), 1);
 		Assert.assertEquals(response.getItems().get(0).getId(), 2);

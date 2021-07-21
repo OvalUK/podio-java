@@ -18,7 +18,7 @@ public class SpaceAPITest {
 		return APIFactoryProvider.getDefault().getAPI(SpaceAPI.class);
 	}
 
-	private SpaceAPI getAPI(int userId) {
+	private SpaceAPI getAPI(long userId) {
 		return new SpaceAPI(ResourceFactoryProvider.getUser(userId));
 	}
 
@@ -40,7 +40,7 @@ public class SpaceAPITest {
 		Assert.assertEquals(space.getUrl(), "https://podio.com/hoist/api");
 		Assert.assertEquals(space.getCreatedOn(), new DateTime(2010, 8, 9, 14,
 				49, 0, 0, DateTimeZone.UTC));
-		Assert.assertEquals(space.getCreatedBy().getUserId().intValue(), 1);
+		Assert.assertEquals(space.getCreatedBy().getUserId().longValue(), 1);
 		Assert.assertEquals(space.getRole(), Role.ADMIN);
 	}
 
@@ -67,7 +67,7 @@ public class SpaceAPITest {
 				7, 0, 0, DateTimeZone.UTC));
 		Assert.assertEquals(member.getStartedOn(), new DateTime(2010, 8, 9, 15,
 				7, 0, 0, DateTimeZone.UTC));
-		Assert.assertEquals(member.getUser().getUserId().intValue(), 1);
+		Assert.assertEquals(member.getUser().getUserId().longValue(), 1);
 		Assert.assertEquals(member.getRole(), Role.ADMIN);
 	}
 
@@ -92,10 +92,10 @@ public class SpaceAPITest {
 		List<SpaceMember> members = getAPI().getActiveMembers(1);
 
 		Assert.assertEquals(members.size(), 6);
-		Assert.assertEquals(members.get(0).getUser().getUserId().intValue(), 5);
-		Assert.assertEquals(members.get(1).getUser().getUserId().intValue(), 4);
-		Assert.assertEquals(members.get(2).getUser().getUserId().intValue(), 2);
-		Assert.assertEquals(members.get(3).getUser().getUserId().intValue(), 1);
+		Assert.assertEquals(members.get(0).getUser().getUserId().longValue(), 5);
+		Assert.assertEquals(members.get(1).getUser().getUserId().longValue(), 4);
+		Assert.assertEquals(members.get(2).getUser().getUserId().longValue(), 2);
+		Assert.assertEquals(members.get(3).getUser().getUserId().longValue(), 1);
 		Assert.assertEquals(members.get(3).getRole(), Role.ADMIN);
 		Assert.assertEquals(members.get(3).getInvitedOn(), new DateTime(2010,
 				8, 9, 15, 7, 0, 0, DateTimeZone.UTC));
@@ -109,10 +109,10 @@ public class SpaceAPITest {
 		List<SpaceMember> members = getAPI(2).getEndedMembers(3);
 
 		Assert.assertEquals(members.size(), 3);
-		Assert.assertEquals(members.get(0).getUser().getUserId().intValue(), 4);
+		Assert.assertEquals(members.get(0).getUser().getUserId().longValue(), 4);
 		Assert.assertEquals(members.get(0).getEndedOn(), new DateTime(2010, 9,
 				30, 12, 35, 0, 0, DateTimeZone.UTC));
-		Assert.assertEquals(members.get(1).getUser().getUserId().intValue(), 1);
+		Assert.assertEquals(members.get(1).getUser().getUserId().longValue(), 1);
 	}
 
 	@Test

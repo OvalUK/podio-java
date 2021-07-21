@@ -15,31 +15,31 @@ public final class ResourceFactoryProvider {
 
 	// Username and password for the test database
 	// Don't bother trying it against api.podio.com, it won't work :)
-	private static final Map<Integer, OAuthUserCredentials> USER_CREDENTIALS_MAP = new HashMap<Integer, OAuthUserCredentials>();
+	private static final Map<Long, OAuthUserCredentials> USER_CREDENTIALS_MAP = new HashMap<Long, OAuthUserCredentials>();
 	static {
-		USER_CREDENTIALS_MAP.put(1, new OAuthUsernameCredentials(
+		USER_CREDENTIALS_MAP.put(1L, new OAuthUsernameCredentials(
 				"dev@hoisthq.com", "AARehARgE1NFPQUv"));
-		USER_CREDENTIALS_MAP.put(2, new OAuthUsernameCredentials(
+		USER_CREDENTIALS_MAP.put(2L, new OAuthUsernameCredentials(
 				"haugstrup@hoisthq.com", "bar"));
 	}
 
-	private static final Map<Integer, ResourceFactory> USER_API_MAP = new HashMap<Integer, ResourceFactory>();
+	private static final Map<Long, ResourceFactory> USER_API_MAP = new HashMap<Long, ResourceFactory>();
 
-	private static final Map<Integer, OAuthUserCredentials> APP_CREDENTIALS_MAP = new HashMap<Integer, OAuthUserCredentials>();
+	private static final Map<Long, OAuthUserCredentials> APP_CREDENTIALS_MAP = new HashMap<Long, OAuthUserCredentials>();
 	static {
 		APP_CREDENTIALS_MAP
-				.put(1,
+				.put(1L,
 						new OAuthAppCredentials(
-								1,
+								1L,
 								"fe8ba3bfd25402a286d4ecb42335387e01bbdcb6d836d1b3eb122737c7b75e7efdc176fafaff5ff51349fdce3a7df73efba0901943307549cade9f835208dcd0"));
 	}
 
-	private static final Map<Integer, ResourceFactory> APP_API_MAP = new HashMap<Integer, ResourceFactory>();
+	private static final Map<Long, ResourceFactory> APP_API_MAP = new HashMap<Long, ResourceFactory>();
 
 	private ResourceFactoryProvider() {
 	}
 
-	public static ResourceFactory getUser(int userId) {
+	public static ResourceFactory getUser(long userId) {
 		ResourceFactory api = USER_API_MAP.get(userId);
 		if (api != null) {
 			return api;
@@ -53,7 +53,7 @@ public final class ResourceFactoryProvider {
 		return api;
 	}
 
-	public static ResourceFactory getApp(int appId) {
+	public static ResourceFactory getApp(long appId) {
 		ResourceFactory api = APP_API_MAP.get(appId);
 		if (api != null) {
 			return api;

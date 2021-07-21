@@ -39,7 +39,7 @@ public class CommentAPITest {
 		Assert.assertEquals(comment.getCreatedBy().getName(), "Christian Holm");
 		Assert.assertEquals(comment.getCreatedBy().getAvatarType(),
 				AvatarType.FILE);
-		Assert.assertEquals(comment.getCreatedBy().getAvatarId().intValue(), 9);
+		Assert.assertEquals(comment.getCreatedBy().getAvatarId().longValue(), 9);
 		Assert.assertEquals(comment.getCreatedBy().getUrl().toString(),
 				"https://podio.com/users/1");
 		Assert.assertEquals(comment.getCreatedVia().getId(), 1);
@@ -58,7 +58,7 @@ public class CommentAPITest {
 
 	@Test
 	public void addComment() {
-		int commentId = getAPI().addComment(
+		long commentId = getAPI().addComment(
 				new Reference(ReferenceType.ITEM, 1),
 				new CommentCreate("Testing"), false, false);
 

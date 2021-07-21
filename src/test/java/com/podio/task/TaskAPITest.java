@@ -27,7 +27,7 @@ public class TaskAPITest {
 		Assert.assertEquals(task.getText(), "Document API");
 		Assert.assertEquals(task.isPrivate(), true);
 		Assert.assertEquals(task.getDueDate(), new LocalDate(2010, 8, 20));
-		Assert.assertEquals(task.getResponsible().getUserId().intValue(), 2);
+		Assert.assertEquals(task.getResponsible().getUserId().longValue(), 2);
 		Assert.assertEquals(task.getSpaceId(), null);
 		Assert.assertEquals(task.getLink(), "https://podio.com/tasks/3");
 		Assert.assertEquals(task.getCreatedOn(), new DateTime(2010, 8, 20, 11,
@@ -66,7 +66,7 @@ public class TaskAPITest {
 
 	@Test
 	public void createTask() {
-		int taskId = getAPI().createTask(
+		long taskId = getAPI().createTask(
 				new TaskCreate("Test task", null, false, new LocalDate(2010,
 						11, 10), 1), false);
 
@@ -75,7 +75,7 @@ public class TaskAPITest {
 
 	@Test
 	public void createTaskWithReference() {
-		int taskId = getAPI().createTaskWithReference(
+		long taskId = getAPI().createTaskWithReference(
 				new TaskCreate("Test task", null, false, new LocalDate(2010,
 						11, 10), 1), new Reference(ReferenceType.ITEM, 1),
 				false);

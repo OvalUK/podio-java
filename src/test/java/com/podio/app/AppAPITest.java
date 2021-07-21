@@ -59,13 +59,13 @@ public class AppAPITest {
 
 	@Test
 	public void addApp() {
-		int appId = getAPI().addApp(
+		long appId = getAPI().addApp(
 				new ApplicationCreate(1, new ApplicationConfigurationCreate(
 						"Tests", "Test", "Description", "Usage", "ExternalId",
 						"23.png", true, ApplicationViewType.BADGE, true, true,
 						false, null, false, false, null, false, null, false,
 						null, Arrays.asList(new ApplicationTaskCreate("Task 1",
-								1), new ApplicationTaskCreate("Task 2"))),
+								1L), new ApplicationTaskCreate("Task 2"))),
 						Arrays.asList(new ApplicationFieldCreate(
 								ApplicationFieldType.TEXT,
 								new ApplicationFieldConfiguration("Title",
@@ -83,9 +83,9 @@ public class AppAPITest {
 								true, ApplicationViewType.BADGE, true, true,
 								false, null, false, false, null, false, null,
 								false, null, Arrays.asList(
-										new ApplicationTaskCreate("Task 1", 1),
+										new ApplicationTaskCreate("Task 1", 1L),
 										new ApplicationTaskCreate("Task 2"))),
-						Arrays.asList(new ApplicationFieldUpdate(1,
+						Arrays.asList(new ApplicationFieldUpdate(1L,
 								new ApplicationFieldConfiguration("Is hired?",
 										"Description", 10,
 										ApplicationFieldSettings
@@ -110,8 +110,8 @@ public class AppAPITest {
 
 	@Test
 	public void addField() {
-		int fieldId = getAPI().addField(
-				1,
+		long fieldId = getAPI().addField(
+				1L,
 				new ApplicationFieldCreate(ApplicationFieldType.TEXT,
 						new ApplicationFieldConfiguration("Description",
 								"Field description", 0,
@@ -137,14 +137,14 @@ public class AppAPITest {
 
 	@Test
 	public void installApp() {
-		int appId = getAPI().install(1, 1);
+		long appId = getAPI().install(1L, 1L);
 		Assert.assertTrue(appId > 1);
 
 	}
 
 	@Test
 	public void updateOrder() {
-		getAPI().updateOrder(1, Arrays.asList(1, 2));
+		getAPI().updateOrder(1L, Arrays.asList(1L, 2L));
 	}
 
 	@Test
@@ -181,7 +181,7 @@ public class AppAPITest {
 		Assert.assertEquals(dependencies.getApps().size(), 2);
 		Assert.assertEquals(dependencies.getDependencies().size(), 2);
 		Assert.assertEquals(dependencies.getDependencies().get(1).get(0)
-				.intValue(), 3);
+				.longValue(), 3);
 	}
 
 	@Test
