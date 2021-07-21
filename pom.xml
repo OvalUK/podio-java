@@ -6,7 +6,7 @@
 	<packaging>jar</packaging>
 
 	<name>podio-api</name>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.1.0-SNAPSHOT</version>
 	<description>An unofficial Java wrapper for the Podio API</description>
 	<url>http://podio.com</url>
 
