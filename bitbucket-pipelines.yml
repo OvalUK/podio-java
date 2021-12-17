@@ -9,10 +9,8 @@ pipelines:
       - step: &Install
           name: Install
           script:
-            - pwd
-            - echo "$HOME"
-            - echo "<settings><servers><server><id>github</id><username>${GITHUB_USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
-            - mvn clean install -DskipTests
+            - echo "<settings><servers><server><id>github</id><username>${GITHUB_USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > .m2/settings.xml
+            - mvn clean install -DskipTests -s .m2/settings.xml
           artifacts:
             - .m2/settings.xml
             - target/*
@@ -23,7 +21,7 @@ pipelines:
       - step:
           name: Build
           script:
-            - mvn package -DskipTests
+            - mvn package -DskipTests -s .m2/settings.xml
           artifacts:
             - .m2/settings.xml
             - target/*
@@ -31,4 +29,4 @@ pipelines:
       - step:
           name: Deploy
           script:
-            - mvn deploy -DskipTests -s ~/.m2/settings.xml
+            - mvn deploy -DskipTests -s .m2/settings.xml
