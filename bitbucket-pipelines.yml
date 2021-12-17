@@ -18,4 +18,4 @@ pipelines:
           name: Build
           script:
             - mvn package -DskipTests
-            - mvn deploy -DskipTests
+            - mvn deploy -DskipTests -s ~/.m2/settings.xml
