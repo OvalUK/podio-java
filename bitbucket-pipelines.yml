@@ -21,12 +21,12 @@ pipelines:
       - step:
           name: Build
           script:
-            - mvn package -DskipTests
+            - mvn package -DskipTests -s settings.xml
           artifacts:
-            - /root/.m2/settings.xml
+            - settings.xml
             - target/*
             - target/**/*
       - step:
           name: Deploy
           script:
-            - mvn deploy -DskipTests
+            - mvn deploy -DskipTests -s settings.xml
