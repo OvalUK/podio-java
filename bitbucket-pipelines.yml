@@ -1,0 +1,21 @@
+image:
+  name: ovalbsol/java-maven:17.3.8.4
+  username: $DOCKER_HUB_USERNAME
+  password: $DOCKER_HUB_PASSWORD
+
+pipelines:
+  branches:
+    master:
+      - step: &Install
+          name: Test
+          script:
+            - echo "<settings><servers><server><id>github</id><username>${GITHUB_USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
+            - mvn clean install -Premote-build
+  tags:
+    '*.*.*':
+      - step: *Install
+      - step:
+          name: Build
+          script:
+            - mvn package -DskipTests -Premote-build
+            - mvn deploy -DskipTests
