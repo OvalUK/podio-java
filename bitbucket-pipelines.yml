@@ -9,10 +9,10 @@ pipelines:
       - step: &Install
           name: Install
           script:
-            - echo "<settings><servers><server><id>github</id><username>${GITHUB_USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > ~/.m2/settings.xml
-            - mvn clean install -DskipTests
+            - echo "<settings><servers><server><id>github</id><username>${GITHUB_USER}</username><password>${GITHUB_TOKEN}</password></server></servers></settings>" > settings.xml
+            - mvn clean install -DskipTests -s settings.xml
           artifacts:
-            - /root/.m2/settings.xml
+            - settings.xml
             - target/*
             - target/**/*
   tags:
