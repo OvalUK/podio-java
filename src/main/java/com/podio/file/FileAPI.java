@@ -58,11 +58,8 @@ public class FileAPI extends BaseAPI {
 			throws IOException {
 		WebResource builder = getResourceFactory()
 				.getFileResource("/" + fileId);
-		if (size != null) {
-			builder = builder.path("/" + size.name().toLowerCase());
-		}
-		byte[] data = builder.get(byte[].class);
-		FileUtils.writeByteArrayToFile(target, data);
+		InputStream data = builder.get(InputStream.class);
+		FileUtils.copyInputStreamToFile(data, target);
 	}
 
 	/**
